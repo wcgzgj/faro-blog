@@ -1,7 +1,7 @@
 package blog.controller;
 
-import blog.pojo.Test;
-import blog.service.TestService;
+import blog.pojo.Demo;
+import blog.service.DemoService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -13,23 +13,25 @@ import javax.annotation.Resource;
 import java.util.List;
 
 /**
- * @ClassName TestController
+ * @ClassName DemoController
  * @Description TODO
  * @Author FARO_Z
- * @Date 2021/4/11 上午1:35
+ * @Date 2021/4/11 上午2:02
  * @Version 1.0
  **/
 @RestController
-@RequestMapping("/test")
-public class TestController {
-    private static final Logger LOG= LoggerFactory.getLogger(TestController.class);
+@RequestMapping("/demo")
+public class DemoController {
+
+    private static final Logger LOG= LoggerFactory.getLogger(DemoController.class);
 
     @Resource
-    private TestService testService;
+    private DemoService demoService;
 
     @GetMapping("/list")
     public String list() {
-        List<Test> list = testService.list();
+        List<Demo> list = demoService.list();
         return list.toString();
     }
+
 }

@@ -1097,3 +1097,86 @@ Caused by: java.lang.IllegalStateException: Cannot load driver class: com.mysql.
 2021-04-11 01:48:25.796 INFO  com.zaxxer.hikari.HikariDataSource                :110  [32m                  [0;39m HikariPool-1 - Starting...
 2021-04-11 01:48:26.161 INFO  com.zaxxer.hikari.HikariDataSource                :123  [32m                  [0;39m HikariPool-1 - Start completed.
 2021-04-11 01:48:26.231 INFO  blog.controller.TestController                    :32   [32m                  [0;39m [Test(id=1, name=测试)]
+2021-04-11 02:04:08.490 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :218  [32m                  [0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-11 02:04:08.497 INFO  com.zaxxer.hikari.HikariDataSource                :350  [32m                  [0;39m HikariPool-1 - Shutdown initiated...
+2021-04-11 02:04:08.529 INFO  com.zaxxer.hikari.HikariDataSource                :352  [32m                  [0;39m HikariPool-1 - Shutdown completed.
+2021-04-11 02:04:08.998 INFO  blog.config.BlogApplication                       :55   [32m                  [0;39m Starting BlogApplication using Java 1.8.0_231 on FARO-ZdeMacBook-Pro.local with PID 20018 (/Users/faro_z/文件/坚果云/编程代码存储路径/java/项目开发/faro-blog/target/classes started by faro_z in /Users/faro_z/文件/坚果云/编程代码存储路径/java/项目开发/faro-blog)
+2021-04-11 02:04:08.999 INFO  blog.config.BlogApplication                       :662  [32m                  [0;39m No active profile set, falling back to default profiles: default
+2021-04-11 02:04:09.568 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :108  [32m                  [0;39m Tomcat initialized with port(s): 8880 (http)
+2021-04-11 02:04:09.569 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Initializing ProtocolHandler ["http-nio-8880"]
+2021-04-11 02:04:09.570 INFO  org.apache.catalina.core.StandardService          :173  [32m                  [0;39m Starting service [Tomcat]
+2021-04-11 02:04:09.570 INFO  org.apache.catalina.core.StandardEngine           :173  [32m                  [0;39m Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-04-11 02:04:09.583 INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] :173  [32m                  [0;39m Initializing Spring embedded WebApplicationContext
+2021-04-11 02:04:09.584 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext    :289  [32m                  [0;39m Root WebApplicationContext: initialization completed in 582 ms
+2021-04-11 02:04:09.972 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :181  [32m                  [0;39m Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-11 02:04:10.175 INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer    :58   [32m                  [0;39m LiveReload server is running on port 35729
+2021-04-11 02:04:10.186 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Starting ProtocolHandler ["http-nio-8880"]
+2021-04-11 02:04:10.188 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :220  [32m                  [0;39m Tomcat started on port(s): 8880 (http) with context path ''
+2021-04-11 02:04:10.192 INFO  blog.config.BlogApplication                       :61   [32m                  [0;39m Started BlogApplication in 1.365 seconds (JVM running for 955.302)
+2021-04-11 02:04:10.194 INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener :63   [32m                  [0;39m Condition evaluation unchanged
+2021-04-11 02:04:10.194 INFO  blog.config.BlogApplication                       :24   [32m                  [0;39m 启动成功
+2021-04-11 02:04:10.194 INFO  blog.config.BlogApplication                       :25   [32m                  [0;39m 地址:	http://127.0.0.1:8880
+2021-04-11 02:04:11.613 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :218  [32m                  [0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-11 02:04:11.768 INFO  blog.config.BlogApplication                       :55   [32m                  [0;39m Starting BlogApplication using Java 1.8.0_231 on FARO-ZdeMacBook-Pro.local with PID 20018 (/Users/faro_z/文件/坚果云/编程代码存储路径/java/项目开发/faro-blog/target/classes started by faro_z in /Users/faro_z/文件/坚果云/编程代码存储路径/java/项目开发/faro-blog)
+2021-04-11 02:04:11.769 INFO  blog.config.BlogApplication                       :662  [32m                  [0;39m No active profile set, falling back to default profiles: default
+2021-04-11 02:04:11.969 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :108  [32m                  [0;39m Tomcat initialized with port(s): 8880 (http)
+2021-04-11 02:04:11.970 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Initializing ProtocolHandler ["http-nio-8880"]
+2021-04-11 02:04:11.970 INFO  org.apache.catalina.core.StandardService          :173  [32m                  [0;39m Starting service [Tomcat]
+2021-04-11 02:04:11.970 INFO  org.apache.catalina.core.StandardEngine           :173  [32m                  [0;39m Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-04-11 02:04:11.977 INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] :173  [32m                  [0;39m Initializing Spring embedded WebApplicationContext
+2021-04-11 02:04:11.977 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext    :289  [32m                  [0;39m Root WebApplicationContext: initialization completed in 206 ms
+2021-04-11 02:04:12.148 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :181  [32m                  [0;39m Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-11 02:04:12.276 INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer    :58   [32m                  [0;39m LiveReload server is running on port 35729
+2021-04-11 02:04:12.285 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Starting ProtocolHandler ["http-nio-8880"]
+2021-04-11 02:04:12.287 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :220  [32m                  [0;39m Tomcat started on port(s): 8880 (http) with context path ''
+2021-04-11 02:04:12.291 INFO  blog.config.BlogApplication                       :61   [32m                  [0;39m Started BlogApplication in 0.543 seconds (JVM running for 957.401)
+2021-04-11 02:04:12.293 INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener :63   [32m                  [0;39m Condition evaluation unchanged
+2021-04-11 02:04:12.293 INFO  blog.config.BlogApplication                       :24   [32m                  [0;39m 启动成功
+2021-04-11 02:04:12.293 INFO  blog.config.BlogApplication                       :25   [32m                  [0;39m 地址:	http://127.0.0.1:8880
+2021-04-11 02:04:29.338 INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] :173  [32m                  [0;39m Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-11 02:04:29.339 INFO  org.springframework.web.servlet.DispatcherServlet :525  [32m                  [0;39m Initializing Servlet 'dispatcherServlet'
+2021-04-11 02:04:29.341 INFO  org.springframework.web.servlet.DispatcherServlet :547  [32m                  [0;39m Completed initialization in 0 ms
+2021-04-11 02:04:29.360 INFO  com.zaxxer.hikari.HikariDataSource                :110  [32m                  [0;39m HikariPool-2 - Starting...
+2021-04-11 02:04:29.379 INFO  com.zaxxer.hikari.HikariDataSource                :123  [32m                  [0;39m HikariPool-2 - Start completed.
+2021-04-11 02:04:29.383 INFO  blog.controller.DemoController                    :33   [32m                  [0;39m [Demo [Hash = 1280813386, id=2, name=测试2]]
+2021-04-11 02:05:59.692 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :218  [32m                  [0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-11 02:05:59.695 INFO  com.zaxxer.hikari.HikariDataSource                :350  [32m                  [0;39m HikariPool-2 - Shutdown initiated...
+2021-04-11 02:05:59.704 INFO  com.zaxxer.hikari.HikariDataSource                :352  [32m                  [0;39m HikariPool-2 - Shutdown completed.
+2021-04-11 02:05:59.958 INFO  blog.config.BlogApplication                       :55   [32m                  [0;39m Starting BlogApplication using Java 1.8.0_231 on FARO-ZdeMacBook-Pro.local with PID 20018 (/Users/faro_z/文件/坚果云/编程代码存储路径/java/项目开发/faro-blog/target/classes started by faro_z in /Users/faro_z/文件/坚果云/编程代码存储路径/java/项目开发/faro-blog)
+2021-04-11 02:05:59.959 INFO  blog.config.BlogApplication                       :662  [32m                  [0;39m No active profile set, falling back to default profiles: default
+2021-04-11 02:06:00.166 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :108  [32m                  [0;39m Tomcat initialized with port(s): 8880 (http)
+2021-04-11 02:06:00.167 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Initializing ProtocolHandler ["http-nio-8880"]
+2021-04-11 02:06:00.167 INFO  org.apache.catalina.core.StandardService          :173  [32m                  [0;39m Starting service [Tomcat]
+2021-04-11 02:06:00.167 INFO  org.apache.catalina.core.StandardEngine           :173  [32m                  [0;39m Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-04-11 02:06:00.177 INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] :173  [32m                  [0;39m Initializing Spring embedded WebApplicationContext
+2021-04-11 02:06:00.177 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext    :289  [32m                  [0;39m Root WebApplicationContext: initialization completed in 214 ms
+2021-04-11 02:06:00.326 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :181  [32m                  [0;39m Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-11 02:06:00.459 INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer    :58   [32m                  [0;39m LiveReload server is running on port 35729
+2021-04-11 02:06:00.468 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Starting ProtocolHandler ["http-nio-8880"]
+2021-04-11 02:06:00.470 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :220  [32m                  [0;39m Tomcat started on port(s): 8880 (http) with context path ''
+2021-04-11 02:06:00.474 INFO  blog.config.BlogApplication                       :61   [32m                  [0;39m Started BlogApplication in 0.547 seconds (JVM running for 1065.581)
+2021-04-11 02:06:00.475 INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener :63   [32m                  [0;39m Condition evaluation unchanged
+2021-04-11 02:06:00.475 INFO  blog.config.BlogApplication                       :24   [32m                  [0;39m 启动成功
+2021-04-11 02:06:00.475 INFO  blog.config.BlogApplication                       :25   [32m                  [0;39m 地址:	http://127.0.0.1:8880
+2021-04-11 02:06:01.916 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :218  [32m                  [0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-11 02:06:02.036 INFO  blog.config.BlogApplication                       :55   [32m                  [0;39m Starting BlogApplication using Java 1.8.0_231 on FARO-ZdeMacBook-Pro.local with PID 20018 (/Users/faro_z/文件/坚果云/编程代码存储路径/java/项目开发/faro-blog/target/classes started by faro_z in /Users/faro_z/文件/坚果云/编程代码存储路径/java/项目开发/faro-blog)
+2021-04-11 02:06:02.036 INFO  blog.config.BlogApplication                       :662  [32m                  [0;39m No active profile set, falling back to default profiles: default
+2021-04-11 02:06:02.191 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :108  [32m                  [0;39m Tomcat initialized with port(s): 8880 (http)
+2021-04-11 02:06:02.191 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Initializing ProtocolHandler ["http-nio-8880"]
+2021-04-11 02:06:02.192 INFO  org.apache.catalina.core.StandardService          :173  [32m                  [0;39m Starting service [Tomcat]
+2021-04-11 02:06:02.192 INFO  org.apache.catalina.core.StandardEngine           :173  [32m                  [0;39m Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-04-11 02:06:02.197 INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] :173  [32m                  [0;39m Initializing Spring embedded WebApplicationContext
+2021-04-11 02:06:02.197 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext    :289  [32m                  [0;39m Root WebApplicationContext: initialization completed in 159 ms
+2021-04-11 02:06:02.341 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :181  [32m                  [0;39m Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-11 02:06:02.454 INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer    :58   [32m                  [0;39m LiveReload server is running on port 35729
+2021-04-11 02:06:02.462 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Starting ProtocolHandler ["http-nio-8880"]
+2021-04-11 02:06:02.463 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :220  [32m                  [0;39m Tomcat started on port(s): 8880 (http) with context path ''
+2021-04-11 02:06:02.466 INFO  blog.config.BlogApplication                       :61   [32m                  [0;39m Started BlogApplication in 0.454 seconds (JVM running for 1067.574)
+2021-04-11 02:06:02.467 INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener :63   [32m                  [0;39m Condition evaluation unchanged
+2021-04-11 02:06:02.467 INFO  blog.config.BlogApplication                       :24   [32m                  [0;39m 启动成功
+2021-04-11 02:06:02.467 INFO  blog.config.BlogApplication                       :25   [32m                  [0;39m 地址:	http://127.0.0.1:8880
+2021-04-11 02:06:09.472 INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] :173  [32m                  [0;39m Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-11 02:06:09.473 INFO  org.springframework.web.servlet.DispatcherServlet :525  [32m                  [0;39m Initializing Servlet 'dispatcherServlet'
+2021-04-11 02:06:09.474 INFO  org.springframework.web.servlet.DispatcherServlet :547  [32m                  [0;39m Completed initialization in 1 ms
+2021-04-11 02:06:09.475 INFO  com.zaxxer.hikari.HikariDataSource                :110  [32m                  [0;39m HikariPool-3 - Starting...
+2021-04-11 02:06:09.495 INFO  com.zaxxer.hikari.HikariDataSource                :123  [32m                  [0;39m HikariPool-3 - Start completed.
