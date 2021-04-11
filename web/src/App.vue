@@ -1,30 +1,61 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
+  <el-container style=" border: 1px solid #eee" direction="vertical">
+    <the-header></the-header>
+    <router-view/>
+    <the-footer></the-footer>
+  </el-container>
+
 </template>
 
+<script lang="ts">
+  import { defineComponent} from 'vue';
+  import TheFooter from './components/the-footer.vue'
+  import TheHeader from "./components/the-header.vue";
+
+  export default defineComponent({
+    name: 'App',
+    components: {
+      TheHeader,
+      TheFooter
+    },
+  });
+
+</script>
+
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+  .el-header, .el-footer {
+    background-color: #B3C0D1;
+    color: #333;
+    text-align: center;
+    line-height: 60px;
   }
-}
+
+  .el-aside {
+    background-color: #D3DCE6;
+    color: #333;
+    text-align: center;
+    line-height: 200px;
+  }
+
+  .el-main {
+    background-color: #E9EEF3;
+    color: #333;
+    text-align: center;
+    line-height: 160px;
+  }
+
+  /*
+	找到html标签、body标签，和挂载的标签
+	都给他们统一设置样式
+  */
+  html,body,#app,.el-container{
+    /*设置内部填充为0，几个布局元素之间没有间距*/
+    padding: 0px;
+    /*外部间距也是如此设置*/
+    margin: 0px;
+    /*统一设置高度为100%*/
+    height: 100%;
+  }
+
+
 </style>
