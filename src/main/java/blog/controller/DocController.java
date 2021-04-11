@@ -5,9 +5,7 @@ import blog.resp.CommonResp;
 import blog.resp.DocQueryResp;
 import blog.service.DocService;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.validation.Valid;
@@ -38,6 +36,12 @@ public class DocController {
         CommonResp<List<DocQueryResp>> resp = new CommonResp<>();
         resp.setContent(list);
         return resp;
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public CommonResp delete(@PathVariable("id") Long id) {
+        docService.delete(id);
+        return new CommonResp();
     }
 
 }

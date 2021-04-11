@@ -44,4 +44,13 @@ public class DocService {
         return docQueryResps;
     }
 
+
+    /**
+     * 删除对应文章信息
+     * @param id
+     */
+    public void delete(Long id) {
+        docMapper.deleteByPrimaryKey(id);
+    }
+
 }

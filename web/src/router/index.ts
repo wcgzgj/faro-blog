@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import Home from '../views/Home.vue'
 import About from '../views/About.vue'
+import AdminDoc from '../views/admin/admin-doc.vue'
 
 
 const routes: Array<RouteRecordRaw> = [
@@ -12,8 +13,12 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/about',
     name: 'About',
-    // 懒加载方式
     component: About
+  },
+  {
+    path: '/admin/doc',
+    name: 'AdminDoc',
+    component: AdminDoc
   }
 ]
 

@@ -7,7 +7,7 @@
             text-color="#fff"
             router
             active-text-color="#ffd04b">
-        <el-menu-item index="1" text-color="#303133">
+        <el-menu-item index="/" text-color="#303133">
             <el-link :underline="false" >
                 FARO_Z的博客
             </el-link>

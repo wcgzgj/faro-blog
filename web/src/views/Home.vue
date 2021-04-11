@@ -1,9 +1,9 @@
 <template>
 
-  <el-container>
+  <el-container v-loading="loading">
 
     <el-main>
-      <el-row :gutter="20" v-for="(o, index) in 8" :key="o" :offset="index > 0 ? 2 : 0">
+      <el-row :gutter="20" v-for="docItem in docList">
         <el-col :span="20" :offset="2">
 
           <!--文章内容显示-->
@@ -11,7 +11,7 @@
             <el-container>
               <el-header style="height: 40px">
                 <el-link href="https://element.eleme.io" target="_blank">
-                  SpringBoot 教程
+                  {{docItem.name}}
                 </el-link>
               </el-header>
               <el-container>
@@ -25,7 +25,7 @@
                   文章介绍
                   <el-divider></el-divider>
                   <span>
-                    这是一篇源于 SpringBoot的报告，讲述的，就是怎么使用 SpringBoot
+                    {{docItem.description}}
                   </span>
 
                 </el-main>
@@ -37,13 +37,13 @@
 
       </el-row>
 
-      <el-row :gutter="20" style="float: right">
+      <el-row :gutter="20">
         <el-col :span="20" :offset="2">
           <!--分页-->
           <el-pagination
                   background
                   layout="prev, pager, next"
-                  :total="1000">
+                  :total="50">
           </el-pagination>
         </el-col>
       </el-row>
@@ -75,6 +75,7 @@
 <script lang="ts">
 import { defineComponent,onMounted,ref } from 'vue';
 import axios from "axios";
+import { ElMessage } from 'element-plus'
 
 export default defineComponent({
   name: 'Home',
@@ -84,21 +85,44 @@ export default defineComponent({
 
   setup() {
 
+    /**
+     * ------数据定义------
+     */
+    const loading=ref();
+    loading.value=true;
+
     const docList= ref();
     docList.value={};
+
+
+
+    /**
+     * ------方法------
+     */
+
     /**
      * 初始打开页面时，进行查询操作
      */
     const handelOpen= () => {
-      // axios.get()
+      loading.value=true;
+      axios.get("/doc/list").then( (resp) => {
+        const data = resp.data;
+        if (data.success) {
+          loading.value=false;
+          docList.value=data.content;
+        } else {
+          ElMessage("加载错误！")
+        }
+      });
     }
 
     onMounted(()=> {
-
+      handelOpen();
     })
 
     return {
-
+      docList,
+      loading
     }
   }
 });
