@@ -1211,3 +1211,6 @@ Caused by: java.lang.IllegalStateException: Cannot load driver class: com.mysql.
 2021-04-11 02:10:39.240 INFO  com.zaxxer.hikari.HikariDataSource                :123  [32m                  [0;39m HikariPool-4 - Start completed.
 2021-04-11 02:10:39.244 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: "[Demo [Hash = 671943418, id=2, name=测试2]]"
 2021-04-11 02:10:39.244 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：112 ms -------------
+2021-04-11 02:18:35.515 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :218  [32m                  [0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-11 02:18:35.526 INFO  com.zaxxer.hikari.HikariDataSource                :350  [32m                  [0;39m HikariPool-4 - Shutdown initiated...
+2021-04-11 02:18:35.548 INFO  com.zaxxer.hikari.HikariDataSource                :352  [32m                  [0;39m HikariPool-4 - Shutdown completed.
