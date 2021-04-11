@@ -23,26 +23,26 @@
 </script>
 
 <style lang="scss">
-  .el-header, .el-footer {
+  .the-footer, .the-header {
     background-color: #B3C0D1;
     color: #333;
     text-align: center;
     line-height: 60px;
   }
 
-  .el-aside {
-    background-color: #D3DCE6;
-    color: #333;
-    text-align: center;
-    line-height: 200px;
-  }
+  /*.el-aside {*/
+  /*  background-color: #D3DCE6;*/
+  /*  color: #333;*/
+  /*  text-align: center;*/
+  /*  line-height: 200px;*/
+  /*}*/
 
-  .el-main {
-    background-color: #E9EEF3;
-    color: #333;
-    text-align: center;
-    line-height: 160px;
-  }
+  /*.el-main {*/
+  /*  background-color: #E9EEF3;*/
+  /*  color: #333;*/
+  /*  text-align: center;*/
+  /*  line-height: 160px;*/
+  /*}*/
 
   /*
 	找到html标签、body标签，和挂载的标签
@@ -55,6 +55,7 @@
     margin: 0px;
     /*统一设置高度为100%*/
     height: 100%;
+    border-width: 0px;
   }
 
 
