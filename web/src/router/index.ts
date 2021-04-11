@@ -2,6 +2,7 @@ import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import AdminDoc from '../views/admin/admin-doc.vue'
+import AdminDocEdit from '../views/admin/admin-doc-edit.vue'
 
 
 const routes: Array<RouteRecordRaw> = [
@@ -19,6 +20,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/admin/doc',
     name: 'AdminDoc',
     component: AdminDoc
+  },
+  {
+    path: '/admin/docEdit',
+    name: 'AdminDocEdit',
+    component: AdminDocEdit
   }
 ]
 
