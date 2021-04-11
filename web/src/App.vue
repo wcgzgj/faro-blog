@@ -28,6 +28,7 @@
     color: #333;
     text-align: center;
     line-height: 60px;
+    margin: 0px;
   }
 
   /*.el-aside {*/

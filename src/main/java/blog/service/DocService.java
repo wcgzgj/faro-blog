@@ -1,13 +1,20 @@
 package blog.service;
 
 import blog.mapper.DocMapper;
+import blog.pojo.Doc;
+import blog.req.DocQueryReq;
 import blog.resp.CommonResp;
+import blog.resp.DocQueryResp;
+import blog.util.CopyUtil;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.annotation.Resource;
+import javax.validation.Valid;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @ClassName DocService
@@ -17,20 +24,24 @@ import javax.annotation.Resource;
  * @Version 1.0
  **/
 @Service
-@RequestMapping("/doc")
 public class DocService {
 
     @Resource
     private DocMapper docMapper;
 
-    @PostMapping("/save")
     public CommonResp save() {
         return null;
     }
 
-    @GetMapping("/list")
-    public CommonResp list() {
-        return null;
+    /**
+     * 获取文章信息
+     * @return
+     */
+    public List<DocQueryResp> list(DocQueryReq req) {
+        List<Doc> docs = docMapper.selectByExample(null);
+        List<DocQueryResp> docQueryResps = CopyUtil.copyList(docs, DocQueryResp.class);
+
+        return docQueryResps;
     }
 
 }

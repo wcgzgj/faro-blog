@@ -18,23 +18,23 @@
                 首页
             </el-link>
         </el-menu-item>
-        <el-menu-item index="3">
-            <el-link :underline="false" icon="el-icon-folder">
-                分类
-            </el-link>
-        </el-menu-item>
-        <el-menu-item index="4">
-            <el-link :underline="false" icon="el-icon-s-finance">
-                标签
-            </el-link>
-        </el-menu-item>
-        <el-menu-item index="5">
+        <el-menu-item index="/admin/doc">
             <el-link :underline="false" icon="el-icon-s-management">
-                归档
+                文章管理
+            </el-link>
+        </el-menu-item>
+        <el-menu-item index="/admin/user">
+            <el-link :underline="false" icon="el-icon-user-solid">
+                用户管理
+            </el-link>
+        </el-menu-item>
+        <el-menu-item index="/admin/status">
+            <el-link :underline="false" icon="el-icon-s-marketing">
+                报表统计
             </el-link>
         </el-menu-item>
         <el-menu-item index="/about">
-            <el-link :underline="false" icon="el-icon-user-solid">
+            <el-link :underline="false" icon="el-icon-info">
                 关于我
             </el-link>
         </el-menu-item>

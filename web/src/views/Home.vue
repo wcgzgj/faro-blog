@@ -1,78 +1,33 @@
 <template>
 
   <el-container>
-    <!--<el-aside width="200px" style="background-color: rgb(238, 241, 246)">-->
-    <!--  <el-menu-->
-    <!--          :uniqueOpened="true"-->
-    <!--          default-active="2"-->
-    <!--          class="el-menu-vertical-demo"-->
-    <!--          @open="handleOpen"-->
-    <!--          @close="handleClose"-->
-    <!--          background-color="#545c64"-->
-    <!--          text-color="#fff"-->
-    <!--          active-text-color="#ffd04b">-->
-    <!--    <el-submenu index="1">-->
-    <!--      <template #title>-->
-    <!--        <i class="el-icon-location"></i>-->
-    <!--        <span>导航一</span>-->
-    <!--      </template>-->
-    <!--      <el-menu-item-group>-->
-    <!--        <template #title>分组一</template>-->
-    <!--        <el-menu-item index="1-1">选项1</el-menu-item>-->
-    <!--        <el-menu-item index="1-2">选项2</el-menu-item>-->
-    <!--      </el-menu-item-group>-->
-    <!--      <el-menu-item-group title="分组2">-->
-    <!--        <el-menu-item index="1-3">选项3</el-menu-item>-->
-    <!--      </el-menu-item-group>-->
-    <!--      <el-submenu index="1-4">-->
-    <!--        <template #title>选项4</template>-->
-    <!--        <el-menu-item index="1-4-1">选项1</el-menu-item>-->
-    <!--      </el-submenu>-->
-    <!--    </el-submenu>-->
-    <!--    <el-menu-item index="2">-->
-    <!--      <i class="el-icon-menu"></i>-->
-    <!--      <template #title>导航二</template>-->
-    <!--    </el-menu-item>-->
-    <!--    <el-menu-item index="3" disabled>-->
-    <!--      <i class="el-icon-document"></i>-->
-    <!--      <template #title>导航三</template>-->
-    <!--    </el-menu-item>-->
-    <!--    <el-menu-item index="4">-->
-    <!--      <i class="el-icon-setting"></i>-->
-    <!--      <template #title>导航四</template>-->
-    <!--    </el-menu-item>-->
-    <!--    <el-submenu index="5">-->
-    <!--      <template #title>-->
-    <!--        <i class="el-icon-location"></i>-->
-    <!--        <span>导航一</span>-->
-    <!--      </template>-->
-    <!--      <el-menu-item-group>-->
-    <!--        <template #title>分组一</template>-->
-    <!--        <el-menu-item index="5-1">选项1</el-menu-item>-->
-    <!--        <el-menu-item index="5-2">选项2</el-menu-item>-->
-    <!--      </el-menu-item-group>-->
-    <!--      <el-menu-item-group title="分组2">-->
-    <!--        <el-menu-item index="5-3">选项3</el-menu-item>-->
-    <!--      </el-menu-item-group>-->
-    <!--    </el-submenu>-->
-    <!--  </el-menu>-->
-    <!--</el-aside>-->
 
     <el-main>
-      <el-row :gutter="20" v-for="(o, index) in 2" :key="o" :offset="index > 0 ? 2 : 0">
-
+      <el-row :gutter="20" v-for="(o, index) in 8" :key="o" :offset="index > 0 ? 2 : 0">
         <el-col :span="20" :offset="2">
+
+          <!--文章内容显示-->
           <el-card :body-style="{ padding: '0px' ,marginTop: '20px'}" class="artical-card">
             <el-container>
-              <el-header style="height: 40px">SpringBoot 教程</el-header>
+              <el-header style="height: 40px">
+                <el-link href="https://element.eleme.io" target="_blank">
+                  SpringBoot 教程
+                </el-link>
+              </el-header>
               <el-container>
                 <el-aside width="200px">
                   <div class="block">
-                    <el-image :src="'https://cube.elemecdn.com/6/94/4d3ea53c084bad6931a56d5158a48jpeg.jpeg'"></el-image>
+                    <el-image :src="'https://cube.elemecdn.com/6/94/4d3ea53c084bad6931a56d5158a48jpeg.jpeg'" class="artical-pic">
+                    </el-image>
                   </div>
                 </el-aside>
                 <el-main>
                   文章介绍
+                  <el-divider></el-divider>
+                  <span>
+                    这是一篇源于 SpringBoot的报告，讲述的，就是怎么使用 SpringBoot
+                  </span>
+
                 </el-main>
               </el-container>
             </el-container>
@@ -81,8 +36,23 @@
         </el-col>
 
       </el-row>
+
+      <el-row :gutter="20" style="float: right">
+        <el-col :span="20" :offset="2">
+          <!--分页-->
+          <el-pagination
+                  background
+                  layout="prev, pager, next"
+                  :total="1000">
+          </el-pagination>
+        </el-col>
+      </el-row>
+
     </el-main>
 
+
+
+    <!--侧边导航栏-->
     <el-card class="box-card">
       <template #header>
         <div class="card-header">
@@ -94,12 +64,17 @@
         {{'列表内容 ' + o }}
       </div>
     </el-card>
+
+
   </el-container>
+
+
 
 </template>
 
 <script lang="ts">
 import { defineComponent,onMounted,ref } from 'vue';
+import axios from "axios";
 
 export default defineComponent({
   name: 'Home',
@@ -109,7 +84,14 @@ export default defineComponent({
 
   setup() {
 
-
+    const docList= ref();
+    docList.value={};
+    /**
+     * 初始打开页面时，进行查询操作
+     */
+    const handelOpen= () => {
+      // axios.get()
+    }
 
     onMounted(()=> {
 
@@ -148,5 +130,10 @@ export default defineComponent({
   .artical-card {
     height: 240px;
     margin: 10px;
+  }
+
+  .artical-pic {
+    margin: 20px;
+    border-radius: 5%;
   }
 </style>
