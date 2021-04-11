@@ -1,6 +1,7 @@
 package blog.controller;
 
 import blog.req.DocQueryReq;
+import blog.req.DocSaveReq;
 import blog.resp.CommonResp;
 import blog.resp.DocQueryResp;
 import blog.service.DocService;
@@ -42,6 +43,19 @@ public class DocController {
     public CommonResp delete(@PathVariable("id") Long id) {
         docService.delete(id);
         return new CommonResp();
+    }
+
+    /**
+     * 保存文档信息
+     * 如果 req 有 id,则是对信息进行更新
+     * @param req
+     * @return
+     */
+    @PostMapping("/save")
+    public CommonResp save(@RequestBody @Valid DocSaveReq req) {
+        CommonResp resp = new CommonResp<>();
+        docService.save(req);
+        return resp;
     }
 
 }
