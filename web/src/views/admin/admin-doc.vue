@@ -20,9 +20,12 @@
 
         <el-table-column label="操作">
             <template #default="scope">
-                <el-button
-                        size="mini"
-                        @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
+
+                <router-link :to="'/admin/docEdit?docId='+scope.row.id">
+                    <el-button
+                            size="mini"
+                            @click="">编辑</el-button>
+                </router-link>
                 <el-button
                         size="mini"
                         type="danger"

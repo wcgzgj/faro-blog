@@ -10,7 +10,7 @@
           <el-card :body-style="{ padding: '0px' ,marginTop: '20px'}" class="artical-card">
             <el-container>
               <el-header style="height: 40px">
-                <el-link href="https://element.eleme.io" target="_blank">
+                <el-link href="#" target="_blank">
                   {{docItem.name}}
                 </el-link>
               </el-header>
