@@ -3,7 +3,7 @@
     <el-container class="docEditPlace" direction="vertical" v-loading="loading">
         <el-row>
             <el-col :span="20" :offset="2">
-                <el-input placeholder="请输入标题" v-model="input1">
+                <el-input placeholder="请输入标题" v-model="doc.name">
                     <template #prepend>Title:</template>
                 </el-input>
             </el-col>
@@ -15,7 +15,7 @@
                         placeholder="请输入文章描述"
                         type="textarea"
                         :autosize="{ minRows: 2, maxRows: 4}"
-                        v-model="input1">
+                        v-model="doc.description">
                 </el-input>
             </el-col>
         </el-row>
@@ -63,9 +63,9 @@
             const doc = ref();
             doc.value={};
 
-            //文章内容信息
-            const content = ref();
-            content.value = {};
+            // //文章内容信息
+            // const content = ref();
+            // content.value = {};
 
             //用来获取浏览器地址内容
             const route = useRoute();
@@ -85,22 +85,51 @@
              */
             const handelOpen= () => {
                 loading.value=true;
-                axios.get("/doc/").then( (resp) => {
+                //获得地址栏中的 docId
+                docId.value = route.query.docId;
+                queryDoc(docId.value);
+                queryContent(docId.value);
+
+                //给文章0.5秒的加载时间
+                setTimeout(loading.value=false,500);
+            }
+
+            /**
+             * 查找文章信息（不包括文章内容）
+             */
+            const queryDoc = (id) => {
+                axios.get("/doc/find/"+id).then( (resp) => {
                     const data = resp.data;
                     if (data.success) {
-                        loading.value=false;
-                        docList.value=data.content;
 
-                        console.log(docList.value)
+                        doc.value = data.content;
+
                     } else {
-                        ElMessage("加载错误！")
+                        ElMessage("文章加载错误！")
                     }
                 });
             }
 
 
+            /**
+             * 查找文章内容
+             */
+            const queryContent = (id) => {
+                axios.get("/doc/find-content/"+id).then( (resp) => {
+                    const data = resp.data;
+                    if (data.success) {
+                        editor.txt.html(data.content);
+                    } else {
+                        ElMessage("文章内容加载错误！")
+                    }
+                });
+            }
+
+
+
             onMounted(() => {
                 editor.create();
+                handelOpen();
             });
 
 
@@ -110,7 +139,6 @@
             return {
                 loading,
                 doc,
-                content
             }
         }
     }

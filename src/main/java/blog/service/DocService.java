@@ -9,6 +9,8 @@ import blog.req.DocSaveReq;
 import blog.resp.DocQueryResp;
 import blog.util.CopyUtil;
 import blog.util.SnowFlake;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
 
@@ -33,6 +35,8 @@ public class DocService {
 
     @Resource
     private SnowFlake snowFlake;
+
+    private static final Logger LOG= LoggerFactory.getLogger(DocService.class);
 
     public void save(DocSaveReq req) {
         Doc doc = CopyUtil.copy(req, Doc.class);
@@ -103,6 +107,9 @@ public class DocService {
      */
     public String findContent(Long id) {
         Content content = contentMapper.selectByPrimaryKey(id);
+        if (ObjectUtils.isEmpty(content)) {
+            return "";
+        }
         return content.getContent();
     }
 
