@@ -1,38 +1,53 @@
 <template>
-    <el-table
-            v-loading="loading"
-            :data="docList"
-            style="width: 100%">
-        <el-table-column
-                label="名称"
-                width="180">
-            <template #default="scope">
-                <span style="margin-left: 10px">{{ scope.row.name }}</span>
-            </template>
-        </el-table-column>
-        <el-table-column
-                label="介绍"
-                width="180">
-            <template #default="scope">
-                <span style="margin-left: 10px">{{ scope.row.description }}</span>
-            </template>
-        </el-table-column>
 
-        <el-table-column label="操作">
-            <template #default="scope">
 
-                <router-link :to="'/admin/docEdit?docId='+scope.row.id">
-                    <el-button
-                            size="mini"
-                            @click="">编辑</el-button>
-                </router-link>
-                <el-button
-                        size="mini"
-                        type="danger"
-                        @click="handleDelete(scope.$index, scope.row)">删除</el-button>
-            </template>
-        </el-table-column>
-    </el-table>
+    <el-row>
+        <el-col :span="18" :offset="3" style="margin-top: 30px">
+            <el-button type="primary" icon="el-icon-plus">新增</el-button>
+            <el-button type="primary" icon="el-icon-search">搜索</el-button>
+        </el-col>
+        <el-col :span="18" :offset="3" style="margin-top: 30px ; margin-bottom: 30px">
+            <el-table
+                    v-loading="loading"
+                    :data="docList"
+                    border
+                    style="width: 100%; text-align: center">
+                <el-table-column
+                        label="名称"
+                        >
+                    <template #default="scope">
+                        <span style="margin-left: 10px">{{ scope.row.name }}</span>
+                    </template>
+                </el-table-column>
+                <el-table-column
+                        label="介绍"
+                        >
+                    <template #default="scope">
+                        <span style="margin-left: 10px">{{ scope.row.description }}</span>
+                    </template>
+                </el-table-column>
+
+                <el-table-column
+                        label="操作"
+                        >
+                    <template #default="scope">
+
+                        <router-link :to="'/admin/docEdit?docId='+scope.row.id">
+                            <el-button
+                                    size="mini"
+                                    @click="">编辑</el-button>
+                        </router-link>
+                        &nbsp;&nbsp;
+                        <el-button
+                                size="mini"
+                                type="danger"
+                                @click="handleDelete(scope.$index, scope.row)">删除</el-button>
+                    </template>
+                </el-table-column>
+            </el-table>
+        </el-col>
+    </el-row>
+
 
 </template>
 

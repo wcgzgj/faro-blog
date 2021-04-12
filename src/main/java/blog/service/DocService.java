@@ -7,6 +7,7 @@ import blog.pojo.Doc;
 import blog.req.DocQueryReq;
 import blog.req.DocSaveReq;
 import blog.resp.DocQueryResp;
+import blog.resp.DocSaveResp;
 import blog.util.CopyUtil;
 import blog.util.SnowFlake;
 import org.slf4j.Logger;
@@ -38,7 +39,7 @@ public class DocService {
 
     private static final Logger LOG= LoggerFactory.getLogger(DocService.class);
 
-    public void save(DocSaveReq req) {
+    public DocSaveResp save(DocSaveReq req) {
         Doc doc = CopyUtil.copy(req, Doc.class);
         Content content = CopyUtil.copy(req, Content.class);
 
@@ -50,6 +51,13 @@ public class DocService {
 
             content.setId(doc.getId());
             contentMapper.insert(content);
+
+            /**
+             * 保存成功后，返回保存的文档的 id
+             */
+            DocSaveResp resp = new DocSaveResp();
+            resp.setId(doc.getId());
+            return resp;
 
         } else {
 
@@ -66,6 +74,10 @@ public class DocService {
                 content.setId(doc.getId());
                 contentMapper.insert(content);
             }
+
+            DocSaveResp resp = new DocSaveResp();
+            resp.setId(doc.getId());
+            return resp;
         }
 
     }
@@ -87,6 +99,13 @@ public class DocService {
      */
     public void delete(Long id) {
         docMapper.deleteByPrimaryKey(id);
+        /**
+         * 在删除文章的时候
+         * 也要删除文章对应的文章内容
+         *
+         * 不然长此以往，会产生大量废弃数据
+         */
+        contentMapper.deleteByPrimaryKey(id);
     }
 
     /**

@@ -23,7 +23,7 @@
         <el-row>
             <el-col :span="20" :offset="2">
                 <el-button type="primary"
-                           @click.native="handelPreview"
+                           @click.native="handelPreview(),drawer = true"
                            icon="el-icon-view">
                     预览
                 </el-button>
@@ -36,13 +36,31 @@
             </el-col>
         </el-row>
 
-        <el-row>
+        <el-row class="artical-row">
             <el-col :span="20" :offset="2">
                 <div id="content"></div>
             </el-col>
         </el-row>
 
     </el-container>
+
+    <el-drawer
+            title="文章预览"
+            v-model="drawer"
+            :direction="'rtl'"
+            size="80%"
+            center="true"
+            class="previewDrawer"
+            :before-close="handleDrawClose" destroy-on-close>
+
+        <div style="height:100%;">
+            <el-scrollbar style="height:100%">
+                <div class="wangeditor" style="margin: 30px; width:700px;height:700px;" :innerHTML="previewHtml"></div>
+            </el-scrollbar>
+        </div>
+
+
+    </el-drawer>
 
 
 </template>
@@ -85,6 +103,11 @@
             //加载信息参数
             const loading = ref();
             loading.value=true;
+
+            const drawer = ref();
+            drawer.value =false;
+
+
 
 
 
@@ -134,8 +157,13 @@
             }
 
 
+            /**
+             * 富文本预览
+             */
+            const previewHtml = ref();
             const handelPreview = () => {
-                console.log("点击了编辑按钮")
+                const html = editor.txt.html();
+                previewHtml.value = html;
             }
 
 
@@ -152,7 +180,14 @@
                         ElMessage.error(resp.message);
                     }
                 })
+            }
 
+            const handleDrawClose = (done) => {
+                ElMessageBox.confirm('确认关闭？')
+                    .then(_ => {
+                        done();
+                    })
+                    .catch(_ => {});
             }
 
 
@@ -169,8 +204,12 @@
             return {
                 loading,
                 doc,
+                drawer,
+                previewHtml,
+
                 handelPreview,
-                handelSave
+                handelSave,
+                handleDrawClose
             }
         }
     }
@@ -178,9 +217,72 @@
 </script>
 
 
-<style scoped>
+<style>
     .docEditPlace .el-row{
         margin-top: 20px;
+    }
+
+    .artical-row {
+        z-index: 1;
+    }
+
+    /* wangeditor默认样式, 参照: http://www.wangeditor.com/doc/pages/02-%E5%86%85%E5%AE%B9%E5%A4%84%E7%90%86/03-%E8%8E%B7%E5%8F%96html.html */
+    /* table 样式 */
+    .wangeditor table {
+        border-top: 1px solid #ccc;
+        border-left: 1px solid #ccc;
+    }
+    .wangeditor table td,
+    .wangeditor table th {
+        border-bottom: 1px solid #ccc;
+        border-right: 1px solid #ccc;
+        padding: 3px 5px;
+    }
+    .wangeditor table th {
+        border-bottom: 2px solid #ccc;
+        text-align: center;
+    }
+
+    /* blockquote 样式 */
+    .wangeditor blockquote {
+        display: block;
+        border-left: 8px solid #d0e5f2;
+        padding: 5px 10px;
+        margin: 10px 0;
+        line-height: 1.4;
+        font-size: 100%;
+        background-color: #f1f1f1;
+    }
+
+    /* code 样式 */
+    .wangeditor code {
+        display: inline-block;
+        *display: inline;
+        *zoom: 1;
+        background-color: #f1f1f1;
+        border-radius: 3px;
+        padding: 3px 5px;
+        margin: 0 3px;
+    }
+    .wangeditor pre code {
+        display: block;
+    }
+
+    /* ul ol 样式 */
+    .wangeditor ul, ol {
+        margin: 10px 0 10px 20px;
+    }
+
+    /* 和antdv p冲突，覆盖掉 */
+    .wangeditor blockquote p {
+        font-family:"YouYuan";
+        margin: 20px 10px !important;
+        font-size: 16px !important;
+        font-weight:600;
+    }
+
+    .previewDrawer {
+        text-align: center;
     }
 
 </style>
