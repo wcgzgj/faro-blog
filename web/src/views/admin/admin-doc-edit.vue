@@ -74,6 +74,8 @@
     import {ElMessage} from "element-plus";
     import { ElMessageBox } from 'element-plus';
     import {useRoute} from "vue-router";
+    import {Tool} from "@/util/tool";
+    import router from "../../router/index.ts";
 
 
     export default {
@@ -170,16 +172,23 @@
             const handelSave = () => {
                 //将文章信息存入 doc 中
                 doc.value.content=editor.txt.html()
+
                 console.log(doc.value);
                 axios.post("/doc/save", doc.value).then( (resp)=> {
                     const data = resp.data;
 
                     if (data.success) {
                         ElMessage.success("保存成功");
+
+                        if (Tool.isEmpty(docId.value)) {
+                            router.push({ path: '/admin/doc' });
+                        }
+
                     } else {
                         //CommonResp 传回来的错误信息
                         ElMessage.error(data.message);
                     }
+
                 })
             }
 

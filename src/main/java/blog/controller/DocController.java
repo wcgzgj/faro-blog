@@ -29,7 +29,7 @@ public class DocController {
     /**
      * 查询电子书信息
      * @param req
-     * @return
+     * @return 通用返回值
      */
     @GetMapping("/list")
     public CommonResp list(@Valid DocQueryReq req) {
@@ -39,11 +39,17 @@ public class DocController {
         return resp;
     }
 
+    /**
+     * 更具 id 进行删除
+     * @param id
+     * @return 通用返回值
+     */
     @DeleteMapping("/delete/{id}")
     public CommonResp delete(@PathVariable("id") Long id) {
         docService.delete(id);
         return new CommonResp();
     }
+
 
     /**
      * 保存文档信息
@@ -62,6 +68,11 @@ public class DocController {
     }
 
 
+    /**
+     * 根据 id 进行查询
+     * @param id
+     * @return
+     */
     @GetMapping("/find/{id}")
     public CommonResp find(@PathVariable("id") Long id) {
         DocQueryResp resp = docService.find(id);

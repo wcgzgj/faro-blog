@@ -4,6 +4,7 @@ import blog.mapper.ContentMapper;
 import blog.mapper.DocMapper;
 import blog.pojo.Content;
 import blog.pojo.Doc;
+import blog.pojo.DocExample;
 import blog.req.DocQueryReq;
 import blog.req.DocSaveReq;
 import blog.resp.DocQueryResp;
@@ -44,13 +45,18 @@ public class DocService {
         Content content = CopyUtil.copy(req, Content.class);
 
         if (ObjectUtils.isEmpty(doc.getId())) {
+
+
             doc.setId(snowFlake.nextId());
+            doc.setDocCount(0);
             doc.setViewCount(0);
             doc.setVoteCount(0);
             docMapper.insert(doc);
 
+
             content.setId(doc.getId());
             contentMapper.insert(content);
+
 
             /**
              * 保存成功后，返回保存的文档的 id
@@ -87,7 +93,15 @@ public class DocService {
      * @return
      */
     public List<DocQueryResp> list(DocQueryReq req) {
-        List<Doc> docs = docMapper.selectByExample(null);
+        DocExample docExample = new DocExample();
+        DocExample.Criteria criteria = docExample.createCriteria();
+
+        //名字不空，说明是查询
+        if (!ObjectUtils.isEmpty(req.getName())) {
+            criteria.andNameLike("%"+req.getName()+"%");
+        }
+
+        List<Doc> docs = docMapper.selectByExample(docExample);
         List<DocQueryResp> docQueryResps = CopyUtil.copyList(docs, DocQueryResp.class);
         return docQueryResps;
     }

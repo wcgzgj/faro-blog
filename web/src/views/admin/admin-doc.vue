@@ -3,8 +3,38 @@
 
     <el-row>
         <el-col :span="18" :offset="3" style="margin-top: 30px">
-            <el-button type="primary" icon="el-icon-plus">新增</el-button>
-            <el-button type="primary" icon="el-icon-search">搜索</el-button>
+
+
+
+            &nbsp;&nbsp;
+
+            <el-form :inline="true" :model="formInline" class="demo-form-inline">
+
+                <el-form-item>
+                    <el-input v-model="searchElem" placeholder="请输入内容"></el-input>
+                </el-form-item>
+
+                <el-form-item>
+                    <el-button
+                            type="primary"
+                            @click.native="handelSearch"
+                            icon="el-icon-search">
+                        搜索
+                    </el-button>
+                </el-form-item>
+
+                <el-form-item>
+                    <router-link :to="'/admin/docEdit'">
+                        <el-button type="primary" icon="el-icon-plus">
+                            新增
+                        </el-button>
+                    </router-link>
+                </el-form-item>
+
+            </el-form>
+
+
+
         </el-col>
         <el-col :span="18" :offset="3" style="margin-top: 30px ; margin-bottom: 30px">
             <el-table
@@ -70,6 +100,9 @@
             const loading=ref();
             loading.value=true;
 
+            const searchElem = ref();
+            searchElem.value="";
+
 
 
             /**
@@ -125,6 +158,24 @@
             }
 
 
+            const handelSearch = () => {
+                loading.value=true;
+                axios.get("/doc/list",{
+                    params: {
+                        name: searchElem.value
+                    }
+                }).then( (resp)=> {
+                    const data = resp.data;
+                    if (data.success) {
+                        loading.value = false;
+                        docList.value = data.content;
+                    } else {
+                        ElMessage.error("查询无果！");
+                    }
+                });
+            }
+
+
             onMounted(() => {
                handelOpen();
 
@@ -137,9 +188,11 @@
             return {
                 docList,
                 loading,
+                searchElem,
 
                 handleEdit,
-                handleDelete
+                handleDelete,
+                handelSearch
             }
         }
     }
