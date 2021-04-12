@@ -1,6 +1,6 @@
 <template>
 
-    <el-container class="docEditPlace" direction="vertical">
+    <el-container class="docEditPlace" direction="vertical" v-loading="loading">
         <el-row>
             <el-col :span="20" :offset="2">
                 <el-input placeholder="请输入标题" v-model="input1">
@@ -47,6 +47,8 @@
     import axios from "axios";
     import {ElMessage} from "element-plus";
     import { ElMessageBox } from 'element-plus';
+    import {useRoute} from "vue-router";
+
 
     export default {
         name: "admin-doc-edit",
@@ -57,16 +59,45 @@
              */
             const editor = new E('#content');
 
+            //文档信息
             const doc = ref();
             doc.value={};
 
+            //文章内容信息
             const content = ref();
             content.value = {};
+
+            //用来获取浏览器地址内容
+            const route = useRoute();
+
+            //记录浏览器中的 docId
+            const docId=ref();
+            docId.value=-1;
+
+            //加载信息参数
+            const loading = ref();
+            loading.value=true;
+
 
 
             /**
              * ------函数区------
              */
+            const handelOpen= () => {
+                loading.value=true;
+                axios.get("/doc/").then( (resp) => {
+                    const data = resp.data;
+                    if (data.success) {
+                        loading.value=false;
+                        docList.value=data.content;
+
+                        console.log(docList.value)
+                    } else {
+                        ElMessage("加载错误！")
+                    }
+                });
+            }
+
 
             onMounted(() => {
                 editor.create();
@@ -77,7 +108,9 @@
              * ------返回------
              */
             return {
-
+                loading,
+                doc,
+                content
             }
         }
     }

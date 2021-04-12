@@ -58,4 +58,26 @@ public class DocController {
         return resp;
     }
 
+
+    @GetMapping("/find/{id}")
+    public CommonResp find(@PathVariable("id") Long id) {
+        DocQueryResp resp = docService.find(id);
+        CommonResp<DocQueryResp> commonResp = new CommonResp<>();
+        commonResp.setContent(resp);
+        return commonResp;
+    }
+
+    /**
+     * 查找文章内容
+     * @param id
+     * @return
+     */
+    @GetMapping("/find-content/{id}")
+    public CommonResp findContent(@PathVariable Long id) {
+        CommonResp<String> resp = new CommonResp<>();
+        String content = docService.findContent(id);
+        resp.setContent(content);
+        return resp;
+    }
+
 }

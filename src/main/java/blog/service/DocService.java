@@ -6,20 +6,13 @@ import blog.pojo.Content;
 import blog.pojo.Doc;
 import blog.req.DocQueryReq;
 import blog.req.DocSaveReq;
-import blog.resp.CommonResp;
 import blog.resp.DocQueryResp;
 import blog.util.CopyUtil;
 import blog.util.SnowFlake;
-import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.annotation.Resource;
-import javax.validation.Valid;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -90,6 +83,27 @@ public class DocService {
      */
     public void delete(Long id) {
         docMapper.deleteByPrimaryKey(id);
+    }
+
+    /**
+     * 依照 id，查找单个元素
+     * @param id
+     * @return
+     */
+    public DocQueryResp find(Long id) {
+        Doc doc = docMapper.selectByPrimaryKey(id);
+        DocQueryResp resp = CopyUtil.copy(doc, DocQueryResp.class);
+        return resp;
+    }
+
+    /**
+     * 查找文章内容
+     * @param id
+     * @return 只用返回String 类型的文章内容
+     */
+    public String findContent(Long id) {
+        Content content = contentMapper.selectByPrimaryKey(id);
+        return content.getContent();
     }
 
 }
