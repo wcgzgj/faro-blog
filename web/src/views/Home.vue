@@ -14,11 +14,20 @@
 
               <el-container>
                 <el-header style="height: 40px ">
-                  <el-link href="#" target="_blank"
-                           style=" font: 18px large ; font-weight: bold"
+                  <!--<el-link href="#" target="_blank"-->
+                  <!--         style=" font: 18px large ; font-weight: bold"-->
+                  <!--         @click="handelDocClick(docItem.id)"-->
+                  <!--&gt;-->
+
+                  <!--</el-link>-->
+
+                  <router-link
+                               :to="'/admin/docEdit?docId='+docItem.id"
+                               style=" font: 18px large ; font-weight: bold; text-decoration: none"
                   >
                     {{docItem.name}}
-                  </el-link>
+                  </router-link>
+
                 </el-header>
 
                 <el-main>
@@ -103,6 +112,9 @@ export default defineComponent({
     const docList= ref();
     docList.value={};
 
+    const docPath = ref();
+    docPath.value='/about';
+
 
 
     /**
@@ -125,13 +137,15 @@ export default defineComponent({
       });
     }
 
+
     onMounted(()=> {
       handelOpen();
     })
 
     return {
       docList,
-      loading
+      loading,
+      docPath
     }
   }
 });

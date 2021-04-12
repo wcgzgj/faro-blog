@@ -91,9 +91,6 @@
             const doc = ref();
             doc.value={};
 
-            // //文章内容信息
-            // const content = ref();
-            // content.value = {};
 
             //用来获取浏览器地址内容
             const route = useRoute();
@@ -169,6 +166,9 @@
             }
 
 
+            /**
+             * 点击保存按钮
+             */
             const handelSave = () => {
                 //将文章信息存入 doc 中
                 doc.value.content=editor.txt.html()
@@ -192,6 +192,9 @@
                 })
             }
 
+            /**
+             * 预览窗口关闭
+             */
             const handleDrawClose = (done) => {
                 ElMessageBox.confirm('确认关闭？')
                     .then(_ => {
