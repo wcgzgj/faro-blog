@@ -4,6 +4,7 @@ import blog.req.DocQueryReq;
 import blog.req.DocSaveReq;
 import blog.resp.CommonResp;
 import blog.resp.DocQueryResp;
+import blog.resp.DocSaveResp;
 import blog.service.DocService;
 import org.springframework.web.bind.annotation.*;
 
@@ -52,8 +53,11 @@ public class DocController {
      */
     @PostMapping("/save")
     public CommonResp save(@RequestBody @Valid DocSaveReq req) {
-        CommonResp resp = new CommonResp<>();
-        docService.save(req);
+        CommonResp<DocSaveResp> resp = new CommonResp<>();
+        DocSaveResp docSaveResp = docService.save(req);
+
+        //保存成功后，返回保存的文档的 id
+        resp.setContent(docSaveResp);
         return resp;
     }
 

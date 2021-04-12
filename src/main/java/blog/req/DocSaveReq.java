@@ -6,14 +6,14 @@ import javax.validation.constraints.NotNull;
 public class DocSaveReq {
     private Long id;
 
-    @NotNull(message = "【电子书】不能为空")
+    @NotEmpty(message = "【标题】不能为空")
     private String name;
 
     private Long category1Id;
 
     private Long category2Id;
 
-    @NotNull(message = "【介绍】不能为空")
+    @NotEmpty(message = "【介绍】不能为空")
     private String description;
 
     private String cover;

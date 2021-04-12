@@ -173,11 +173,12 @@
                 console.log(doc.value);
                 axios.post("/doc/save", doc.value).then( (resp)=> {
                     const data = resp.data;
+
                     if (data.success) {
                         ElMessage.success("保存成功");
                     } else {
                         //CommonResp 传回来的错误信息
-                        ElMessage.error(resp.message);
+                        ElMessage.error(data.message);
                     }
                 })
             }
