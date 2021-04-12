@@ -22,9 +22,17 @@
 
         <el-row>
             <el-col :span="20" :offset="2">
-                <el-button type="primary" icon="el-icon-view">预览</el-button>
+                <el-button type="primary"
+                           @click.native="handelPreview"
+                           icon="el-icon-view">
+                    预览
+                </el-button>
 
-                <el-button type="primary" icon="el-icon-check">保存</el-button>
+                <el-button type="primary"
+                           @click.native="handelSave()"
+                           icon="el-icon-check">
+                    保存
+                </el-button>
             </el-col>
         </el-row>
 
@@ -126,6 +134,28 @@
             }
 
 
+            const handelPreview = () => {
+                console.log("点击了编辑按钮")
+            }
+
+
+            const handelSave = () => {
+                //将文章信息存入 doc 中
+                doc.value.content=editor.txt.html()
+                console.log(doc.value);
+                axios.post("/doc/save", doc.value).then( (resp)=> {
+                    const data = resp.data;
+                    if (data.success) {
+                        ElMessage.success("保存成功");
+                    } else {
+                        //CommonResp 传回来的错误信息
+                        ElMessage.error(resp.message);
+                    }
+                })
+
+            }
+
+
 
             onMounted(() => {
                 editor.create();
@@ -139,6 +169,8 @@
             return {
                 loading,
                 doc,
+                handelPreview,
+                handelSave
             }
         }
     }
