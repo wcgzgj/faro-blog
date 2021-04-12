@@ -80,11 +80,13 @@
             }
 
             const handleEdit=(index: any, row: any) =>{
-                /**
-                 * 跳转到新的文档修改页面
-                 *
-                 * 需要新建一个编辑页面，可以模仿 csdn 样式
-                 */
+               /**
+                * 点击编辑按钮，会直接路由跳转
+                * 跳转到编辑页面
+                * 所以用不到 handleEdit 函数
+                * 但是放在这里，是为了方便以后如果要复制这个组件
+                * 可以再复用
+                */
             }
 
             const handleDelete=(index: any, row: any) =>{
