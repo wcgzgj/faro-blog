@@ -8,29 +8,38 @@
 
           <!--文章内容显示-->
           <el-card :body-style="{ padding: '0px' ,marginTop: '20px'}" class="artical-card">
+
+
             <el-container>
-              <el-header style="height: 40px">
-                <el-link href="#" target="_blank">
-                  {{docItem.name}}
-                </el-link>
-              </el-header>
+
               <el-container>
-                <el-aside width="200px">
-                  <div class="block">
-                    <el-image :src="'https://cube.elemecdn.com/6/94/4d3ea53c084bad6931a56d5158a48jpeg.jpeg'" class="artical-pic">
-                    </el-image>
-                  </div>
-                </el-aside>
+                <el-header style="height: 40px ">
+                  <el-link href="#" target="_blank"
+                           style=" font: 18px large ; font-weight: bold"
+                  >
+                    {{docItem.name}}
+                  </el-link>
+                </el-header>
+
                 <el-main>
-                  文章介绍
-                  <el-divider></el-divider>
+                  <span style="font-weight: bold ; color: cornflowerblue ">
+                    文章介绍：
+                  </span>
+                  <br/>
                   <span>
                     {{docItem.description}}
                   </span>
-
                 </el-main>
+
               </el-container>
+              <el-aside width="200px">
+                <div class="block">
+                  <el-image :src="'https://cube.elemecdn.com/6/94/4d3ea53c084bad6931a56d5158a48jpeg.jpeg'" class="artical-pic">
+                  </el-image>
+                </div>
+              </el-aside>
             </el-container>
+
 
           </el-card>
         </el-col>
@@ -152,7 +161,7 @@ export default defineComponent({
   }
 
   .artical-card {
-    height: 240px;
+    height: 200px;
     margin: 10px;
   }
 

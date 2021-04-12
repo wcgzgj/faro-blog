@@ -137,6 +137,9 @@
                 */
             }
 
+            /**
+             * 文章删除功能
+             */
             const handleDelete=(index: any, row: any) =>{
                 ElMessageBox.confirm('此操作将永久删除该文件, 是否继续?', '提示', {
                     confirmButtonText: '确定',
@@ -158,6 +161,9 @@
             }
 
 
+            /**
+             * 文章检索功能
+             */
             const handelSearch = () => {
                 loading.value=true;
                 axios.get("/doc/list",{
@@ -178,7 +184,6 @@
 
             onMounted(() => {
                handelOpen();
-
             });
 
 
