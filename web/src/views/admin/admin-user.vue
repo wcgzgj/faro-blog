@@ -4,13 +4,10 @@
     <el-row>
         <el-col :span="18" :offset="3" style="margin-top: 30px">
 
-
-
-
             <el-form :inline="true" :model="formInline" class="demo-form-inline">
 
                 <el-form-item>
-                    <el-input v-model="searchElem" placeholder="请输入内容"></el-input>
+                    <el-input v-model="searchElem" placeholder="请输入登录名"></el-input>
                 </el-form-item>
 
                 <el-form-item>
@@ -29,12 +26,11 @@
                         </el-button>
                     </router-link>
                 </el-form-item>
-
             </el-form>
 
-
-
         </el-col>
+
+
         <el-col :span="18" :offset="3" style="margin-top: 30px ; margin-bottom: 30px">
             <el-table
                     v-loading="loading"
@@ -66,13 +62,16 @@
 
                 <el-table-column
                         label="操作"
+                        width="260px"
                         >
                     <template #default="scope">
 
                         <el-button
                                 size="mini"
-                                @click="handleEdit">编辑</el-button>
-                        &nbsp;&nbsp;
+                                @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
+                        <el-button
+                                size="mini"
+                                @click="handleEdit(scope.$index, scope.row)">重置密码</el-button>
                         <el-button
                                 size="mini"
                                 type="danger"
@@ -84,25 +83,27 @@
     </el-row>
 
 
-    <el-dialog title="用户信息" v-model="dialogFormVisible">
-        <!--<el-form :model="form">-->
-        <!--    <el-form-item label="活动名称" >-->
-        <!--        <el-input v-model="form.name" autocomplete="off"></el-input>-->
-        <!--    </el-form-item>-->
-        <!--    <el-form-item label="活动区域" >-->
-        <!--        <el-select v-model="form.region" placeholder="请选择活动区域">-->
-        <!--            <el-option label="区域一" value="shanghai"></el-option>-->
-        <!--            <el-option label="区域二" value="beijing"></el-option>-->
-        <!--        </el-select>-->
-        <!--    </el-form-item>-->
-        <!--</el-form>-->
-        <!--<template #footer>-->
-        <!--    <span class="dialog-footer">-->
-        <!--      <el-button @click="dialogFormVisible = false">取 消</el-button>-->
-        <!--      <el-button type="primary" @click="dialogFormVisible = false">确 定</el-button>-->
-        <!--    </span>-->
-        <!--</template>-->
-        <h3>这是模态框</h3>
+    <el-dialog title="用户编辑" v-model="dialogFormVisible">
+        <el-form :model="user">
+            <el-form-item label="登录名" >
+                <el-input v-model="user.loginName" autocomplete="off"></el-input>
+            </el-form-item>
+            <el-form-item label="昵称" >
+                <el-input v-model="user.name" autocomplete="off"></el-input>
+            </el-form-item>
+            <el-form-item label="密码" v-show="!user.id">
+                <el-input v-model="user.password" autocomplete="off"></el-input>
+            </el-form-item>
+        </el-form>
+
+        <template #footer>
+            <span class="dialog-footer">
+              <el-button @click="dialogFormVisible = false">取 消</el-button>
+              <el-button type="primary" @click="handelModalOk">确 定</el-button>
+            </span>
+        </template>
+
+
     </el-dialog>
 
 
@@ -113,6 +114,7 @@
     import axios from "axios";
     import {ElMessage} from "element-plus";
     import { ElMessageBox } from 'element-plus';
+    import {Tool} from "@/util/tool";
 
     export default {
         name: "admin-user",
@@ -133,6 +135,10 @@
             //用户修改模态框可视化
             const dialogFormVisible = ref();
             dialogFormVisible.value=false;
+
+            //模态框中的用户信息
+            const user = ref();
+            user.value={};
 
 
 
@@ -158,16 +164,16 @@
                 });
             }
 
+            /**
+             * 用户编辑按钮
+             */
             const handleEdit=(index: any, row: any) =>{
-               /**
-                * 点击编辑按钮，会直接路由跳转
-                * 跳转到编辑页面
-                * 所以用不到 handleEdit 函数
-                * 但是放在这里，是为了方便以后如果要复制这个组件
-                * 可以再复用
-                */
+
                dialogFormVisible.value=true;
+               user.value = Tool.copy(row)
             }
+
+
 
             /**
              * 文章删除功能
@@ -213,6 +219,21 @@
                 });
             }
 
+            /**
+             * 确认用户模态框的修改
+             */
+            const handelModalOk = () => {
+                axios.post("/user/save",user.value).then((resp)=>{
+                    const data = resp.data;
+                    if (data.success) {
+                        dialogFormVisible.value = false;
+                        handelOpen();
+                    } else {
+                        dialogFormVisible.value = false;
+                        ElMessage.error("编辑错误");
+                    }
+                })
+            }
 
             onMounted(() => {
                handelOpen();
@@ -227,10 +248,12 @@
                 loading,
                 searchElem,
                 dialogFormVisible,
+                user,
 
                 handleEdit,
                 handleDelete,
-                handelSearch
+                handelSearch,
+                handelModalOk
             }
         }
     }

@@ -6,6 +6,8 @@ import blog.resp.CommonResp;
 import blog.resp.UserQueryResp;
 import blog.resp.UserSaveResp;
 import blog.service.UserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -22,6 +24,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/user")
 public class UserController {
+
+    private static final Logger LOG= LoggerFactory.getLogger(UserController.class);
 
     @Resource
     private UserService userService;
@@ -78,6 +82,7 @@ public class UserController {
         UserQueryResp resp = userService.find(id);
         CommonResp<UserQueryResp> commonResp = new CommonResp<>();
         commonResp.setContent(resp);
+        LOG.info("find返回的数据为:"+commonResp );
         return commonResp;
     }
 
