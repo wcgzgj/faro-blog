@@ -22,7 +22,7 @@
                   <!--</el-link>-->
 
                   <router-link
-                               :to="'/admin/docEdit?docId='+docItem.id"
+                               :to="'/doc?docId='+docItem.id"
                                style=" font: 18px large ; font-weight: bold; text-decoration: none"
                   >
                     {{docItem.name}}

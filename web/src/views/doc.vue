@@ -1,5 +1,34 @@
 <template>
-    
+
+    <el-container>
+
+        <el-main>
+            <el-row >
+                <el-col :span="14" :offset="5" >
+                    <div class="innerHtml">
+                        <div class="wangeditor" style="margin: 30px; " :innerHTML="html"></div>
+                    </div>
+                </el-col>
+            </el-row>
+        </el-main>
+
+
+        <el-sider>
+            <el-card class="box-card">
+                <template #header>
+                    <div class="card-header">
+                        <span>卡片名称</span>
+                        <el-button class="button" type="text">操作按钮</el-button>
+                    </div>
+                </template>
+                <div v-for="o in 4" :key="o" class="text item">
+                    {{'列表内容 ' + o }}
+                </div>
+            </el-card>
+        </el-sider>
+    </el-container>
+
+
 </template>
 
 <script>
@@ -37,6 +66,8 @@
             const loading = ref();
             loading.value=true;
 
+            //显示文档内容
+            const html = ref();
 
 
             /**
@@ -77,7 +108,7 @@
                 axios.get("/doc/find-content/"+id).then( (resp) => {
                     const data = resp.data;
                     if (data.success) {
-                        editor.txt.html(data.content);
+                        html.value=data.content;
                     } else {
                         ElMessage("文章内容加载错误！")
                     }
@@ -87,6 +118,7 @@
 
             onMounted(() => {
                 editor.create();
+                handelOpen();
             });
 
 
@@ -96,9 +128,10 @@
             return {
                 loading,
                 doc,
+                html,
 
 
-                handelOpen
+                handelOpen,
             }
 
         }
@@ -106,5 +139,73 @@
 </script>
 
 <style>
+    .wangeditor {
+        z-index: -1;
+    }
+
+    .box-card {
+        height: 100%;
+    }
+
+    /* wangeditor默认样式, 参照: http://www.wangeditor.com/doc/pages/02-%E5%86%85%E5%AE%B9%E5%A4%84%E7%90%86/03-%E8%8E%B7%E5%8F%96html.html */
+    /* table 样式 */
+    .wangeditor table {
+        border-top: 1px solid #ccc;
+        border-left: 1px solid #ccc;
+    }
+    .wangeditor table td,
+    .wangeditor table th {
+        border-bottom: 1px solid #ccc;
+        border-right: 1px solid #ccc;
+        padding: 3px 5px;
+    }
+    .wangeditor table th {
+        border-bottom: 2px solid #ccc;
+        text-align: center;
+    }
+
+    /* blockquote 样式 */
+    .wangeditor blockquote {
+        display: block;
+        border-left: 8px solid #d0e5f2;
+        padding: 5px 10px;
+        margin: 10px 0;
+        line-height: 1.4;
+        font-size: 100%;
+        background-color: #f1f1f1;
+    }
+
+    /* code 样式 */
+    .wangeditor code {
+        display: inline-block;
+        *display: inline;
+        *zoom: 1;
+        background-color: #f1f1f1;
+        border-radius: 3px;
+        padding: 3px 5px;
+        margin: 0 3px;
+    }
+    .wangeditor pre code {
+        display: block;
+    }
+
+    /* ul ol 样式 */
+    .wangeditor ul, ol {
+        margin: 10px 0 10px 20px;
+    }
+
+    /* 和antdv p冲突，覆盖掉 */
+    .wangeditor blockquote p {
+        font-family:"YouYuan";
+        margin: 20px 10px !important;
+        font-size: 16px !important;
+        font-weight:600;
+    }
+
+    .innerHtml {
+        background-color: #E9EEF3;
+        padding: 20px;
+        margin: 10px;
+    }
 
 </style>
