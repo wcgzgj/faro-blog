@@ -3,6 +3,7 @@
     <el-container>
 
         <el-main>
+            <!--文章页面-->
             <el-row >
                 <el-col :span="14" :offset="5" >
                     <div class="innerHtml">
@@ -10,6 +11,13 @@
                     </div>
                 </el-col>
             </el-row>
+
+            <el-row style="text-align: center">
+                <el-col :span="14" :offset="5" >
+                    <comment :comments="commentData"></comment>
+                </el-col>
+            </el-row>
+
         </el-main>
 
 
@@ -40,6 +48,9 @@
     import {useRoute} from "vue-router";
     import {Tool} from "@/util/tool";
     import router from "../router/index.ts";
+
+    import * as CommentData from '../mockdata'
+    import comment from '../components/comment.vue'
 
 
     export default {
@@ -129,6 +140,7 @@
                 loading,
                 doc,
                 html,
+                CommentData,
 
 
                 handelOpen,
