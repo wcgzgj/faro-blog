@@ -20,11 +20,12 @@
                 </el-form-item>
 
                 <el-form-item>
-                    <router-link :to="'/admin/userEdit'">
-                        <el-button type="primary" icon="el-icon-plus">
-                            新增
-                        </el-button>
-                    </router-link>
+                    <el-button
+                            type="primary"
+                            @click.native="handelAdd"
+                            icon="el-icon-plus">
+                        新增
+                    </el-button>
                 </el-form-item>
             </el-form>
 
@@ -83,7 +84,7 @@
     </el-row>
 
 
-    <el-dialog title="用户编辑" v-model="dialogFormVisible">
+    <el-dialog title="用户编辑" v-model="editDialogFormVisible">
         <el-form :model="user">
             <el-form-item label="登录名" >
                 <el-input v-model="user.loginName" autocomplete="off"></el-input>
@@ -98,13 +99,36 @@
 
         <template #footer>
             <span class="dialog-footer">
-              <el-button @click="dialogFormVisible = false">取 消</el-button>
-              <el-button type="primary" @click="handelModalOk">确 定</el-button>
+              <el-button @click="editDialogFormVisible = false">取 消</el-button>
+              <el-button type="primary" @click="handelEditModalOk">确 定</el-button>
             </span>
         </template>
-
-
     </el-dialog>
+
+
+    <el-dialog title="用户新增" v-model="addDialogFormVisible">
+        <el-form :model="newUser">
+            <el-form-item label="登录名" >
+                <el-input v-model="newUser.loginName" autocomplete="off"></el-input>
+            </el-form-item>
+            <el-form-item label="昵称" >
+                <el-input v-model="newUser.name" autocomplete="off"></el-input>
+            </el-form-item>
+            <el-form-item label="密码">
+                <el-input v-model="newUser.password" autocomplete="off"></el-input>
+            </el-form-item>
+        </el-form>
+
+        <template #footer>
+            <span class="dialog-footer">
+              <el-button @click="addDialogFormVisible = false">取 消</el-button>
+              <el-button type="primary" @click="handelAddModalOk">确 定</el-button>
+            </span>
+        </template>
+    </el-dialog>
+
+
+    
 
 
 </template>
@@ -133,12 +157,20 @@
             searchElem.value="";
 
             //用户修改模态框可视化
-            const dialogFormVisible = ref();
-            dialogFormVisible.value=false;
+            const editDialogFormVisible = ref();
+            editDialogFormVisible.value=false;
+
+            //用户新增模态框可视化
+            const addDialogFormVisible = ref();
+            addDialogFormVisible.value=false;
 
             //模态框中的用户信息
             const user = ref();
             user.value={};
+
+            //新增用户
+            const newUser = ref();
+            newUser.value = {};
 
 
 
@@ -169,8 +201,16 @@
              */
             const handleEdit=(index: any, row: any) =>{
 
-               dialogFormVisible.value=true;
+               editDialogFormVisible.value=true;
                user.value = Tool.copy(row)
+            }
+
+
+            /**
+             * 文章新增功能
+             */
+            const handelAdd = () => {
+                addDialogFormVisible.value=true;
             }
 
 
@@ -219,21 +259,40 @@
                 });
             }
 
+
             /**
-             * 确认用户模态框的修改
+             * 确认编辑用户模态框的修改
              */
-            const handelModalOk = () => {
+            const handelEditModalOk = () => {
                 axios.post("/user/save",user.value).then((resp)=>{
                     const data = resp.data;
                     if (data.success) {
-                        dialogFormVisible.value = false;
+                        editDialogFormVisible.value = false;
                         handelOpen();
                     } else {
-                        dialogFormVisible.value = false;
-                        ElMessage.error("编辑错误");
+                        editDialogFormVisible.value = false;
+                        ElMessage.error(data.message);
                     }
                 })
             }
+
+
+            /**
+             * 确认新增用户模态框的修改
+             */
+            const handelAddModalOk = () => {
+                axios.post("/user/save",newUser.value).then((resp)=>{
+                    const data = resp.data;
+                    if (data.success) {
+                        addDialogFormVisible.value = false;
+                        handelOpen();
+                    } else {
+                        addDialogFormVisible.value = false;
+                        ElMessage.error(data.message);
+                    }
+                })
+            }
+
 
             onMounted(() => {
                handelOpen();
@@ -247,13 +306,17 @@
                 userList,
                 loading,
                 searchElem,
-                dialogFormVisible,
+                editDialogFormVisible,
+                addDialogFormVisible,
                 user,
+                newUser,
 
                 handleEdit,
                 handleDelete,
                 handelSearch,
-                handelModalOk
+                handelEditModalOk,
+                handelAddModalOk,
+                handelAdd
             }
         }
     }
