@@ -1,6 +1,7 @@
 package blog.controller;
 
 import blog.req.UserQueryReq;
+import blog.req.UserResetPasswordReq;
 import blog.req.UserSaveReq;
 import blog.resp.CommonResp;
 import blog.resp.UserQueryResp;
@@ -72,6 +73,16 @@ public class UserController {
 
         //保存成功后，返回保存的文档的 id
         resp.setContent(userSaveResp);
+        return resp;
+    }
+
+
+    @PostMapping("/reset-password")
+    public CommonResp resetPassword(@RequestBody @Valid UserResetPasswordReq req) {
+        req.setPassword(DigestUtils.md5DigestAsHex(req.getPassword().getBytes()));
+        userService.resetPassword(req);
+
+        CommonResp resp = new CommonResp<>();
         return resp;
     }
 

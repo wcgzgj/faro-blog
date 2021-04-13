@@ -72,7 +72,7 @@
                                 @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
                         <el-button
                                 size="mini"
-                                @click="handleEdit(scope.$index, scope.row)">重置密码</el-button>
+                                @click="handleReset(scope.$index, scope.row)">重置密码</el-button>
                         <el-button
                                 size="mini"
                                 type="danger"
@@ -128,6 +128,23 @@
     </el-dialog>
 
 
+
+    <el-dialog title="重置密码" v-model="resetDialogFormVisible">
+        <el-form :model="newPassword">
+            <el-form-item label="密码">
+                <el-input v-model="newPassword.password" autocomplete="off" placeholder="请输入新密码"></el-input>
+            </el-form-item>
+        </el-form>
+
+        <template #footer>
+            <span class="dialog-footer">
+              <el-button @click="resetDialogFormVisible = false">取 消</el-button>
+              <el-button type="primary" @click="handelResetModalOk">确 定</el-button>
+            </span>
+        </template>
+    </el-dialog>
+
+
     
 
 
@@ -168,6 +185,10 @@
             const addDialogFormVisible = ref();
             addDialogFormVisible.value=false;
 
+            //重置密码模态框
+            const resetDialogFormVisible = ref();
+            resetDialogFormVisible.value = false;
+
             //模态框中的用户信息
             const user = ref();
             user.value={};
@@ -175,6 +196,12 @@
             //新增用户
             const newUser = ref();
             newUser.value = {};
+
+            //新增用户
+            const newPassword = ref();
+            newPassword.value = {};
+
+
 
 
 
@@ -209,12 +236,22 @@
                user.value = Tool.copy(row)
             }
 
+            /**
+             * 重置密码按钮
+             */
+            const handleReset=(index: any, row: any) =>{
+                resetDialogFormVisible.value=true;
+                newPassword.value = Tool.copy(row)
+                newPassword.value.password="";
+            }
+
 
             /**
              * 文章新增功能
              */
             const handelAdd = () => {
                 addDialogFormVisible.value=true;
+                newUser.value={};
             }
 
 
@@ -305,6 +342,24 @@
             }
 
 
+            /**
+             * 确认重置密码模态框的修改
+             */
+            const handelResetModalOk = () => {
+
+                axios.post("/user/reset-password",newPassword.value).then((resp)=>{
+                    const data = resp.data;
+                    if (data.success) {
+                        resetDialogFormVisible.value = false;
+                        handelOpen();
+                    } else {
+                        addDialogFormVisible.value = false;
+                        ElMessage.error(data.message);
+                    }
+                })
+            }
+
+
             onMounted(() => {
                handelOpen();
             });
@@ -321,13 +376,17 @@
                 addDialogFormVisible,
                 user,
                 newUser,
+                resetDialogFormVisible,
+                newPassword,
 
                 handleEdit,
                 handleDelete,
                 handelSearch,
                 handelEditModalOk,
                 handelAddModalOk,
-                handelAdd
+                handelResetModalOk,
+                handelAdd,
+                handleReset
             }
         }
     }

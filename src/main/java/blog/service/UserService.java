@@ -4,6 +4,7 @@ import blog.mapper.UserMapper;
 import blog.pojo.User;
 import blog.pojo.UserExample;
 import blog.req.UserQueryReq;
+import blog.req.UserResetPasswordReq;
 import blog.req.UserSaveReq;
 import blog.resp.UserQueryResp;
 import blog.resp.UserSaveResp;
@@ -103,6 +104,19 @@ public class UserService {
         User user = userMapper.selectByPrimaryKey(id);
         UserQueryResp resp = CopyUtil.copy(user, UserQueryResp.class);
         return resp;
+    }
+
+    /**
+     * 修改密码
+     * @param req
+     */
+    public void resetPassword(UserResetPasswordReq req) {
+        User user=CopyUtil.copy(req,User.class);
+        /**
+         * 因为我们的 UserResetPasswordReq只有 id 和 password
+         * 所以我们在更新的时候，要使用 selective，这样才不会让其他值变成 null
+         */
+        userMapper.updateByPrimaryKeySelective(user);
     }
 
 
