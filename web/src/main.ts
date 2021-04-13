@@ -14,4 +14,3 @@ app.use(store)
     .use(router)
     .use(ElementPlus)
     .mount('#app')
-

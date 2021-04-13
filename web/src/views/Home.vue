@@ -69,19 +69,39 @@
     </el-main>
 
 
-
     <!--侧边导航栏-->
-    <el-card class="box-card">
-      <template #header>
-        <div class="card-header">
-          <span>卡片名称</span>
-          <el-button class="button" type="text">操作按钮</el-button>
-        </div>
-      </template>
-      <div v-for="o in 4" :key="o" class="text item">
-        {{'列表内容 ' + o }}
-      </div>
-    </el-card>
+    <el-sider style="width: 20%">
+
+      <el-row>
+        <el-col>
+          <el-card :body-style="{ padding: '0px' }" style="text-align: center; margin: 20px">
+            <img src="../assets/me.jpg" class="me-image">
+            <div style="padding: 14px;">
+              <div style="border-radius: 4px;box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1)">
+                我是练习时长一年左右的 java 练习生 FARO_Z，喜欢 web 开发，徒手造轮子，手撕源码
+              </div>
+            </div>
+          </el-card>
+        </el-col>
+        <el-col>
+          <el-card :body-style="{ padding: '0px' }" style="text-align: center;margin: 20px">
+            <img src="../assets/wechat.jpg" class="me-image">
+            <div style="padding: 14px;">
+              <span>我的微信</span>
+            </div>
+          </el-card>
+        </el-col>
+        <!--<el-col>-->
+        <!--  <el-card :body-style="{ padding: '0px' }" style="text-align: center;margin: 20px">-->
+        <!--    <img src="../assets/qq.jpg" class="me-image">-->
+        <!--    <div style="padding: 14px;">-->
+        <!--      <span>我的QQ</span>-->
+        <!--    </div>-->
+        <!--  </el-card>-->
+        <!--</el-col>-->
+      </el-row>
+
+    </el-sider>
 
 
   </el-container>
@@ -94,6 +114,7 @@
 import { defineComponent,onMounted,ref } from 'vue';
 import axios from "axios";
 import { ElMessage } from 'element-plus'
+import dayjs from "dayjs"
 
 export default defineComponent({
   name: 'Home',
@@ -114,6 +135,11 @@ export default defineComponent({
 
     const docPath = ref();
     docPath.value='/about';
+
+    const dateValue = ref();
+    dateValue.value = new Date();
+
+
 
 
 
@@ -145,7 +171,8 @@ export default defineComponent({
     return {
       docList,
       loading,
-      docPath
+      docPath,
+      dateValue
     }
   }
 });
@@ -183,4 +210,14 @@ export default defineComponent({
     margin: 20px;
     border-radius: 5%;
   }
+
+  .me-image {
+    margin: 4px;
+    border-radius: 4%;
+    width: 200px;
+  }
+
+
+
+
 </style>
