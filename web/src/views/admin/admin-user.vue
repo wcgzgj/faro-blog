@@ -140,6 +140,10 @@
     import { ElMessageBox } from 'element-plus';
     import {Tool} from "@/util/tool";
 
+
+    declare let hexMd5;
+    declare let KEY;
+
     export default {
         name: "admin-user",
 
@@ -281,6 +285,13 @@
              * 确认新增用户模态框的修改
              */
             const handelAddModalOk = () => {
+
+                /**
+                 * 前端调用 MD5 加密算法
+                 * KEY 是盐值，让密码更为复杂
+                 */
+                newUser.value.password = hexMd5(newUser.value.password + KEY);
+
                 axios.post("/user/save",newUser.value).then((resp)=>{
                     const data = resp.data;
                     if (data.success) {

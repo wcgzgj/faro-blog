@@ -8,6 +8,7 @@ import blog.resp.UserSaveResp;
 import blog.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.util.DigestUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -63,6 +64,9 @@ public class UserController {
      */
     @PostMapping("/save")
     public CommonResp save(@RequestBody @Valid UserSaveReq req) {
+        //对密码进行 md5 加密
+        req.setPassword(DigestUtils.md5DigestAsHex(req.getPassword().getBytes()));
+
         CommonResp<UserSaveResp> resp = new CommonResp<>();
         UserSaveResp userSaveResp = userService.save(req);
 

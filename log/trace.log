@@ -2567,3 +2567,470 @@
 2021-04-13 16:17:56.257 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{}]
 2021-04-13 16:17:56.258 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"id":1,"loginName":"kkk","name":"测试"},{"id":2,"loginName":"admin","name":"管理员"}],"success":true}
 2021-04-13 16:17:56.259 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：3 ms -------------
+2021-04-13 16:21:10.432 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:21:10.436 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/list GET
+2021-04-13 16:21:10.437 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.list
+2021-04-13 16:21:10.437 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:21:10.438 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{}]
+2021-04-13 16:21:10.455 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"id":1,"loginName":"kkk","name":"测试"},{"id":2,"loginName":"admin","name":"管理员"}],"success":true}
+2021-04-13 16:21:10.455 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：23 ms -------------
+2021-04-13 16:21:17.146 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:21:17.147 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/list GET
+2021-04-13 16:21:17.148 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.list
+2021-04-13 16:21:17.148 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:21:17.148 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{}]
+2021-04-13 16:21:17.153 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"id":1,"loginName":"kkk","name":"测试"},{"id":2,"loginName":"admin","name":"管理员"}],"success":true}
+2021-04-13 16:21:17.153 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：7 ms -------------
+2021-04-13 16:21:41.755 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:21:41.756 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/list GET
+2021-04-13 16:21:41.756 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.list
+2021-04-13 16:21:41.756 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:21:41.757 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{}]
+2021-04-13 16:21:41.760 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"id":1,"loginName":"kkk","name":"测试"},{"id":2,"loginName":"admin","name":"管理员"}],"success":true}
+2021-04-13 16:21:41.760 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：5 ms -------------
+2021-04-13 16:22:15.543 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:22:15.547 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/list GET
+2021-04-13 16:22:15.548 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.list
+2021-04-13 16:22:15.548 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:22:15.549 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{}]
+2021-04-13 16:22:15.565 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"id":1,"loginName":"kkk","name":"测试"},{"id":2,"loginName":"admin","name":"管理员"}],"success":true}
+2021-04-13 16:22:15.565 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：22 ms -------------
+2021-04-13 16:22:52.096 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:22:52.097 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/list GET
+2021-04-13 16:22:52.097 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.list
+2021-04-13 16:22:52.097 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:22:52.098 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{}]
+2021-04-13 16:22:52.101 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"id":1,"loginName":"kkk","name":"测试"},{"id":2,"loginName":"admin","name":"管理员"}],"success":true}
+2021-04-13 16:22:52.101 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：5 ms -------------
+2021-04-13 16:22:52.432 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:22:52.433 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/list GET
+2021-04-13 16:22:52.433 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.list
+2021-04-13 16:22:52.434 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:22:52.434 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{}]
+2021-04-13 16:22:52.436 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"id":1,"loginName":"kkk","name":"测试"},{"id":2,"loginName":"admin","name":"管理员"}],"success":true}
+2021-04-13 16:22:52.436 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：4 ms -------------
+2021-04-13 16:22:59.770 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:22:59.771 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/list GET
+2021-04-13 16:22:59.771 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.list
+2021-04-13 16:22:59.771 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:22:59.771 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{}]
+2021-04-13 16:22:59.774 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"id":1,"loginName":"kkk","name":"测试"},{"id":2,"loginName":"admin","name":"管理员"}],"success":true}
+2021-04-13 16:22:59.774 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：4 ms -------------
+2021-04-13 16:23:00.930 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:23:00.931 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/list GET
+2021-04-13 16:23:00.931 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.list
+2021-04-13 16:23:00.931 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:23:00.931 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{}]
+2021-04-13 16:23:00.934 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"id":1,"loginName":"kkk","name":"测试"},{"id":2,"loginName":"admin","name":"管理员"}],"success":true}
+2021-04-13 16:23:00.934 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：4 ms -------------
+2021-04-13 16:23:03.237 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:23:03.238 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/list GET
+2021-04-13 16:23:03.239 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.list
+2021-04-13 16:23:03.239 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:23:03.239 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{}]
+2021-04-13 16:23:03.245 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"id":1,"loginName":"kkk","name":"测试"},{"id":2,"loginName":"admin","name":"管理员"}],"success":true}
+2021-04-13 16:23:03.246 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：9 ms -------------
+2021-04-13 16:23:05.091 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:23:05.094 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/doc/list GET
+2021-04-13 16:23:05.096 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.DocController.list
+2021-04-13 16:23:05.097 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:23:05.098 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{}]
+2021-04-13 16:23:05.108 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"description":"零基础入门 Java 开发，企业级应用开发最佳首选框架","docCount":0,"id":1,"name":"Spring Boot 入门教程","viewCount":0,"voteCount":0},{"description":"零基础入门 Vue 开发，企业级应用开发最佳首选框架","docCount":0,"id":2,"name":"Vue 入门教程","viewCount":0,"voteCount":0},{"description":"零基础入门 Python 开发，企业级应用开发最佳首选框架","docCount":0,"id":3,"name":"Python 入门教程","viewCount":0,"voteCount":0},{"description":"零基础入门 Mysql 开发，企业级应用开发最佳首选框架","docCount":0,"id":4,"name":"Mysql 入门教程","viewCount":0,"voteCount":0},{"description":"c++真的很容易，不会有人不会吧？","docCount":0,"id":5,"name":"21 天学会C++","viewCount":0,"voteCount":0},{"description":"卡里古拉文章链接","docCount":0,"id":36754863593492480,"name":"卡里古拉","viewCount":0,"voteCount":0},{"description":" python,2天就够了","docCount":0,"id":36776384114331648,"name":"2天学会python","viewCount":0,"voteCount":0}],"success":true}
+2021-04-13 16:23:05.120 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：29 ms -------------
+2021-04-13 16:23:05.292 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:23:05.294 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/doc/list GET
+2021-04-13 16:23:05.294 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.DocController.list
+2021-04-13 16:23:05.295 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:23:05.295 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{}]
+2021-04-13 16:23:05.298 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"description":"零基础入门 Java 开发，企业级应用开发最佳首选框架","docCount":0,"id":1,"name":"Spring Boot 入门教程","viewCount":0,"voteCount":0},{"description":"零基础入门 Vue 开发，企业级应用开发最佳首选框架","docCount":0,"id":2,"name":"Vue 入门教程","viewCount":0,"voteCount":0},{"description":"零基础入门 Python 开发，企业级应用开发最佳首选框架","docCount":0,"id":3,"name":"Python 入门教程","viewCount":0,"voteCount":0},{"description":"零基础入门 Mysql 开发，企业级应用开发最佳首选框架","docCount":0,"id":4,"name":"Mysql 入门教程","viewCount":0,"voteCount":0},{"description":"c++真的很容易，不会有人不会吧？","docCount":0,"id":5,"name":"21 天学会C++","viewCount":0,"voteCount":0},{"description":"卡里古拉文章链接","docCount":0,"id":36754863593492480,"name":"卡里古拉","viewCount":0,"voteCount":0},{"description":" python,2天就够了","docCount":0,"id":36776384114331648,"name":"2天学会python","viewCount":0,"voteCount":0}],"success":true}
+2021-04-13 16:23:05.298 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：6 ms -------------
+2021-04-13 16:23:06.420 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:23:06.420 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/list GET
+2021-04-13 16:23:06.420 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.list
+2021-04-13 16:23:06.421 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:23:06.421 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{}]
+2021-04-13 16:23:06.425 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"id":1,"loginName":"kkk","name":"测试"},{"id":2,"loginName":"admin","name":"管理员"}],"success":true}
+2021-04-13 16:23:06.425 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：5 ms -------------
+2021-04-13 16:23:06.658 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:23:06.658 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/list GET
+2021-04-13 16:23:06.658 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.list
+2021-04-13 16:23:06.658 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:23:06.659 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{}]
+2021-04-13 16:23:06.661 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"id":1,"loginName":"kkk","name":"测试"},{"id":2,"loginName":"admin","name":"管理员"}],"success":true}
+2021-04-13 16:23:06.662 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：4 ms -------------
+2021-04-13 16:23:11.998 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:23:11.998 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/list GET
+2021-04-13 16:23:11.999 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.list
+2021-04-13 16:23:11.999 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:23:11.999 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{}]
+2021-04-13 16:23:12.002 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"id":1,"loginName":"kkk","name":"测试"},{"id":2,"loginName":"admin","name":"管理员"}],"success":true}
+2021-04-13 16:23:12.002 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：4 ms -------------
+2021-04-13 16:24:15.758 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:24:15.759 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/list GET
+2021-04-13 16:24:15.760 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.list
+2021-04-13 16:24:15.760 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:24:15.760 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{}]
+2021-04-13 16:24:15.762 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"id":1,"loginName":"kkk","name":"测试"},{"id":2,"loginName":"admin","name":"管理员"}],"success":true}
+2021-04-13 16:24:15.762 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：4 ms -------------
+2021-04-13 16:24:16.892 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:24:16.892 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/list GET
+2021-04-13 16:24:16.893 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.list
+2021-04-13 16:24:16.893 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:24:16.893 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{}]
+2021-04-13 16:24:16.896 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"id":1,"loginName":"kkk","name":"测试"},{"id":2,"loginName":"admin","name":"管理员"}],"success":true}
+2021-04-13 16:24:16.896 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：4 ms -------------
+2021-04-13 16:24:55.127 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:24:55.129 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/list GET
+2021-04-13 16:24:55.130 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.list
+2021-04-13 16:24:55.130 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:24:55.131 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{}]
+2021-04-13 16:24:55.134 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"id":1,"loginName":"kkk","name":"测试"},{"id":2,"loginName":"admin","name":"管理员"}],"success":true}
+2021-04-13 16:24:55.135 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：8 ms -------------
+2021-04-13 16:25:13.407 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:25:13.409 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/list GET
+2021-04-13 16:25:13.409 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.list
+2021-04-13 16:25:13.409 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:25:13.409 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{}]
+2021-04-13 16:25:13.413 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"id":1,"loginName":"kkk","name":"测试"},{"id":2,"loginName":"admin","name":"管理员"}],"success":true}
+2021-04-13 16:25:13.413 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：6 ms -------------
+2021-04-13 16:25:15.238 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:25:15.239 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/list GET
+2021-04-13 16:25:15.239 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.list
+2021-04-13 16:25:15.239 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:25:15.239 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{}]
+2021-04-13 16:25:15.241 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"id":1,"loginName":"kkk","name":"测试"},{"id":2,"loginName":"admin","name":"管理员"}],"success":true}
+2021-04-13 16:25:15.241 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：3 ms -------------
+2021-04-13 16:26:52.235 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:26:52.237 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/list GET
+2021-04-13 16:26:52.237 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.list
+2021-04-13 16:26:52.237 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:26:52.238 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{}]
+2021-04-13 16:26:52.242 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"id":1,"loginName":"kkk","name":"测试"},{"id":2,"loginName":"admin","name":"管理员"}],"success":true}
+2021-04-13 16:26:52.242 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：7 ms -------------
+2021-04-13 16:27:45.658 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:27:45.659 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/list GET
+2021-04-13 16:27:45.660 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.list
+2021-04-13 16:27:45.660 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:27:45.661 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{}]
+2021-04-13 16:27:45.664 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"id":1,"loginName":"kkk","name":"测试"},{"id":2,"loginName":"admin","name":"管理员"}],"success":true}
+2021-04-13 16:27:45.665 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：7 ms -------------
+2021-04-13 16:27:47.248 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:27:47.249 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/list GET
+2021-04-13 16:27:47.249 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.list
+2021-04-13 16:27:47.249 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:27:47.249 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{}]
+2021-04-13 16:27:47.252 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"id":1,"loginName":"kkk","name":"测试"},{"id":2,"loginName":"admin","name":"管理员"}],"success":true}
+2021-04-13 16:27:47.253 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：5 ms -------------
+2021-04-13 16:27:48.270 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:27:48.271 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/list GET
+2021-04-13 16:27:48.271 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.list
+2021-04-13 16:27:48.271 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:27:48.272 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{}]
+2021-04-13 16:27:48.274 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"id":1,"loginName":"kkk","name":"测试"},{"id":2,"loginName":"admin","name":"管理员"}],"success":true}
+2021-04-13 16:27:48.274 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：4 ms -------------
+2021-04-13 16:27:56.567 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:27:56.568 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/list GET
+2021-04-13 16:27:56.568 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.list
+2021-04-13 16:27:56.569 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:27:56.569 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{}]
+2021-04-13 16:27:56.572 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"id":1,"loginName":"kkk","name":"测试"},{"id":2,"loginName":"admin","name":"管理员"}],"success":true}
+2021-04-13 16:27:56.573 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：6 ms -------------
+2021-04-13 16:27:58.201 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:27:58.201 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/list GET
+2021-04-13 16:27:58.201 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.list
+2021-04-13 16:27:58.202 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:27:58.202 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{}]
+2021-04-13 16:27:58.204 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"id":1,"loginName":"kkk","name":"测试"},{"id":2,"loginName":"admin","name":"管理员"}],"success":true}
+2021-04-13 16:27:58.204 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：3 ms -------------
+2021-04-13 16:28:01.670 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:28:01.671 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/list GET
+2021-04-13 16:28:01.671 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.list
+2021-04-13 16:28:01.672 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:28:01.672 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{}]
+2021-04-13 16:28:01.677 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"id":1,"loginName":"kkk","name":"测试"},{"id":2,"loginName":"admin","name":"管理员"}],"success":true}
+2021-04-13 16:28:01.678 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：8 ms -------------
+2021-04-13 16:28:36.812 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:28:36.813 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/list GET
+2021-04-13 16:28:36.813 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.list
+2021-04-13 16:28:36.814 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:28:36.814 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{}]
+2021-04-13 16:28:36.818 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"id":1,"loginName":"kkk","name":"测试"},{"id":2,"loginName":"admin","name":"管理员"}],"success":true}
+2021-04-13 16:28:36.819 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：7 ms -------------
+2021-04-13 16:38:20.550 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:38:20.554 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/list GET
+2021-04-13 16:38:20.555 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.list
+2021-04-13 16:38:20.555 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:38:20.556 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{"loginName":""}]
+2021-04-13 16:38:20.571 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"id":1,"loginName":"kkk","name":"测试"},{"id":2,"loginName":"admin","name":"管理员"}],"success":true}
+2021-04-13 16:38:20.571 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：22 ms -------------
+2021-04-13 16:39:41.887 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:39:41.889 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/list GET
+2021-04-13 16:39:41.889 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.list
+2021-04-13 16:39:41.890 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:39:41.890 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{}]
+2021-04-13 16:39:41.893 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"id":1,"loginName":"kkk","name":"测试"},{"id":2,"loginName":"admin","name":"管理员"}],"success":true}
+2021-04-13 16:39:41.893 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：6 ms -------------
+2021-04-13 16:39:43.658 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:39:43.658 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/list GET
+2021-04-13 16:39:43.658 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.list
+2021-04-13 16:39:43.659 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:39:43.659 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{}]
+2021-04-13 16:39:43.661 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"id":1,"loginName":"kkk","name":"测试"},{"id":2,"loginName":"admin","name":"管理员"}],"success":true}
+2021-04-13 16:39:43.661 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：3 ms -------------
+2021-04-13 16:39:55.362 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:39:55.363 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/list GET
+2021-04-13 16:39:55.364 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.list
+2021-04-13 16:39:55.364 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:39:55.364 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{}]
+2021-04-13 16:39:55.368 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"id":1,"loginName":"kkk","name":"测试"},{"id":2,"loginName":"admin","name":"管理员"}],"success":true}
+2021-04-13 16:39:55.369 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：7 ms -------------
+2021-04-13 16:39:58.376 WARN  blog.controller.ControllerExceptionHandler        :32   [32m                  [0;39m 参数校验失败：【密码】不能为空
+2021-04-13 16:39:58.378 WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver   :207  [32m                  [0;39m Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public blog.resp.CommonResp blog.controller.UserController.save(blog.req.UserSaveReq) with 3 errors: [Field error in object 'userSaveReq' on field 'password': rejected value [null]; codes [NotEmpty.userSaveReq.password,NotEmpty.password,NotEmpty.java.lang.String,NotEmpty]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [userSaveReq.password,password]; arguments []; default message [password]]; default message [【密码】不能为空]] [Field error in object 'userSaveReq' on field 'name': rejected value [null]; codes [NotEmpty.userSaveReq.name,NotEmpty.name,NotEmpty.java.lang.String,NotEmpty]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [userSaveReq.name,name]; arguments []; default message [name]]; default message [【昵称】不能为空]] [Field error in object 'userSaveReq' on field 'loginName': rejected value [null]; codes [NotEmpty.userSaveReq.loginName,NotEmpty.loginName,NotEmpty.java.lang.String,NotEmpty]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [userSaveReq.loginName,loginName]; arguments []; default message [loginName]]; default message [【用户名】不能为空]] ]
+2021-04-13 16:40:03.847 WARN  blog.controller.ControllerExceptionHandler        :32   [32m                  [0;39m 参数校验失败：【用户名】不能为空
+2021-04-13 16:40:03.850 WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver   :207  [32m                  [0;39m Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public blog.resp.CommonResp blog.controller.UserController.save(blog.req.UserSaveReq) with 3 errors: [Field error in object 'userSaveReq' on field 'loginName': rejected value [null]; codes [NotEmpty.userSaveReq.loginName,NotEmpty.loginName,NotEmpty.java.lang.String,NotEmpty]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [userSaveReq.loginName,loginName]; arguments []; default message [loginName]]; default message [【用户名】不能为空]] [Field error in object 'userSaveReq' on field 'password': rejected value [null]; codes [NotEmpty.userSaveReq.password,NotEmpty.password,NotEmpty.java.lang.String,NotEmpty]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [userSaveReq.password,password]; arguments []; default message [password]]; default message [【密码】不能为空]] [Field error in object 'userSaveReq' on field 'name': rejected value [null]; codes [NotEmpty.userSaveReq.name,NotEmpty.name,NotEmpty.java.lang.String,NotEmpty]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [userSaveReq.name,name]; arguments []; default message [name]]; default message [【昵称】不能为空]] ]
+2021-04-13 16:40:06.513 WARN  blog.controller.ControllerExceptionHandler        :32   [32m                  [0;39m 参数校验失败：【用户名】不能为空
+2021-04-13 16:40:06.514 WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver   :207  [32m                  [0;39m Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public blog.resp.CommonResp blog.controller.UserController.save(blog.req.UserSaveReq) with 3 errors: [Field error in object 'userSaveReq' on field 'loginName': rejected value [null]; codes [NotEmpty.userSaveReq.loginName,NotEmpty.loginName,NotEmpty.java.lang.String,NotEmpty]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [userSaveReq.loginName,loginName]; arguments []; default message [loginName]]; default message [【用户名】不能为空]] [Field error in object 'userSaveReq' on field 'password': rejected value [null]; codes [NotEmpty.userSaveReq.password,NotEmpty.password,NotEmpty.java.lang.String,NotEmpty]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [userSaveReq.password,password]; arguments []; default message [password]]; default message [【密码】不能为空]] [Field error in object 'userSaveReq' on field 'name': rejected value [null]; codes [NotEmpty.userSaveReq.name,NotEmpty.name,NotEmpty.java.lang.String,NotEmpty]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [userSaveReq.name,name]; arguments []; default message [name]]; default message [【昵称】不能为空]] ]
+2021-04-13 16:40:15.732 WARN  blog.controller.ControllerExceptionHandler        :32   [32m                  [0;39m 参数校验失败：【昵称】不能为空
+2021-04-13 16:40:15.733 WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver   :207  [32m                  [0;39m Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public blog.resp.CommonResp blog.controller.UserController.save(blog.req.UserSaveReq) with 3 errors: [Field error in object 'userSaveReq' on field 'name': rejected value [null]; codes [NotEmpty.userSaveReq.name,NotEmpty.name,NotEmpty.java.lang.String,NotEmpty]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [userSaveReq.name,name]; arguments []; default message [name]]; default message [【昵称】不能为空]] [Field error in object 'userSaveReq' on field 'loginName': rejected value [null]; codes [NotEmpty.userSaveReq.loginName,NotEmpty.loginName,NotEmpty.java.lang.String,NotEmpty]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [userSaveReq.loginName,loginName]; arguments []; default message [loginName]]; default message [【用户名】不能为空]] [Field error in object 'userSaveReq' on field 'password': rejected value [null]; codes [NotEmpty.userSaveReq.password,NotEmpty.password,NotEmpty.java.lang.String,NotEmpty]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [userSaveReq.password,password]; arguments []; default message [password]]; default message [【密码】不能为空]] ]
+2021-04-13 16:40:18.797 WARN  blog.controller.ControllerExceptionHandler        :32   [32m                  [0;39m 参数校验失败：【昵称】不能为空
+2021-04-13 16:40:18.798 WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver   :207  [32m                  [0;39m Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public blog.resp.CommonResp blog.controller.UserController.save(blog.req.UserSaveReq) with 3 errors: [Field error in object 'userSaveReq' on field 'name': rejected value [null]; codes [NotEmpty.userSaveReq.name,NotEmpty.name,NotEmpty.java.lang.String,NotEmpty]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [userSaveReq.name,name]; arguments []; default message [name]]; default message [【昵称】不能为空]] [Field error in object 'userSaveReq' on field 'loginName': rejected value [null]; codes [NotEmpty.userSaveReq.loginName,NotEmpty.loginName,NotEmpty.java.lang.String,NotEmpty]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [userSaveReq.loginName,loginName]; arguments []; default message [loginName]]; default message [【用户名】不能为空]] [Field error in object 'userSaveReq' on field 'password': rejected value [null]; codes [NotEmpty.userSaveReq.password,NotEmpty.password,NotEmpty.java.lang.String,NotEmpty]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [userSaveReq.password,password]; arguments []; default message [password]]; default message [【密码】不能为空]] ]
+2021-04-13 16:40:54.532 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:40:54.534 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/list GET
+2021-04-13 16:40:54.535 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.list
+2021-04-13 16:40:54.535 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:40:54.535 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{}]
+2021-04-13 16:40:54.548 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"id":1,"loginName":"kkk","name":"测试"},{"id":2,"loginName":"admin","name":"管理员"}],"success":true}
+2021-04-13 16:40:54.548 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：16 ms -------------
+2021-04-13 16:40:56.854 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:40:56.854 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/list GET
+2021-04-13 16:40:56.855 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.list
+2021-04-13 16:40:56.855 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:40:56.856 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{}]
+2021-04-13 16:40:56.860 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"id":1,"loginName":"kkk","name":"测试"},{"id":2,"loginName":"admin","name":"管理员"}],"success":true}
+2021-04-13 16:40:56.860 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：6 ms -------------
+2021-04-13 16:40:59.948 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:40:59.949 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/save POST
+2021-04-13 16:40:59.949 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.save
+2021-04-13 16:40:59.949 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:40:59.950 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{"id":1,"loginName":"kkkdwq","name":"测试"}]
+2021-04-13 16:40:59.959 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":{"id":1},"success":true}
+2021-04-13 16:40:59.959 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：11 ms -------------
+2021-04-13 16:40:59.982 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:40:59.983 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/list GET
+2021-04-13 16:40:59.983 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.list
+2021-04-13 16:40:59.983 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:40:59.983 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{}]
+2021-04-13 16:40:59.985 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"id":1,"loginName":"kkkdwq","name":"测试"},{"id":2,"loginName":"admin","name":"管理员"}],"success":true}
+2021-04-13 16:40:59.986 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：4 ms -------------
+2021-04-13 16:41:05.022 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:41:05.023 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/save POST
+2021-04-13 16:41:05.023 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.save
+2021-04-13 16:41:05.024 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:41:05.024 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{"id":1,"loginName":"kkk","name":"测试"}]
+2021-04-13 16:41:05.030 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":{"id":1},"success":true}
+2021-04-13 16:41:05.031 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：9 ms -------------
+2021-04-13 16:41:05.056 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:41:05.057 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/list GET
+2021-04-13 16:41:05.057 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.list
+2021-04-13 16:41:05.057 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:41:05.057 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{}]
+2021-04-13 16:41:05.059 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"id":1,"loginName":"kkk","name":"测试"},{"id":2,"loginName":"admin","name":"管理员"}],"success":true}
+2021-04-13 16:41:05.059 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：3 ms -------------
+2021-04-13 16:41:09.338 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:41:09.339 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/save POST
+2021-04-13 16:41:09.339 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.save
+2021-04-13 16:41:09.340 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:41:09.340 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{"id":1,"loginName":"kkk","name":"测试"}]
+2021-04-13 16:41:09.344 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":{"id":1},"success":true}
+2021-04-13 16:41:09.344 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：6 ms -------------
+2021-04-13 16:41:09.360 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:41:09.360 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/list GET
+2021-04-13 16:41:09.360 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.list
+2021-04-13 16:41:09.361 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:41:09.361 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{}]
+2021-04-13 16:41:09.364 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"id":1,"loginName":"kkk","name":"测试"},{"id":2,"loginName":"admin","name":"管理员"}],"success":true}
+2021-04-13 16:41:09.364 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：4 ms -------------
+2021-04-13 16:41:45.301 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:41:45.303 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/list GET
+2021-04-13 16:41:45.303 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.list
+2021-04-13 16:41:45.304 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:41:45.304 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{}]
+2021-04-13 16:41:45.306 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"id":1,"loginName":"kkk","name":"测试"},{"id":2,"loginName":"admin","name":"管理员"}],"success":true}
+2021-04-13 16:41:45.306 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：5 ms -------------
+2021-04-13 16:41:47.268 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:41:47.268 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/list GET
+2021-04-13 16:41:47.269 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.list
+2021-04-13 16:41:47.269 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:41:47.269 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{}]
+2021-04-13 16:41:47.272 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"id":1,"loginName":"kkk","name":"测试"},{"id":2,"loginName":"admin","name":"管理员"}],"success":true}
+2021-04-13 16:41:47.272 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：4 ms -------------
+2021-04-13 16:42:16.712 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:42:16.713 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/list GET
+2021-04-13 16:42:16.713 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.list
+2021-04-13 16:42:16.714 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:42:16.714 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{}]
+2021-04-13 16:42:16.716 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"id":1,"loginName":"kkk","name":"测试"},{"id":2,"loginName":"admin","name":"管理员"}],"success":true}
+2021-04-13 16:42:16.717 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：5 ms -------------
+2021-04-13 16:42:17.647 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:42:17.647 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/list GET
+2021-04-13 16:42:17.647 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.list
+2021-04-13 16:42:17.647 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:42:17.647 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{}]
+2021-04-13 16:42:17.651 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"id":1,"loginName":"kkk","name":"测试"},{"id":2,"loginName":"admin","name":"管理员"}],"success":true}
+2021-04-13 16:42:17.651 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：4 ms -------------
+2021-04-13 16:42:20.983 WARN  blog.controller.ControllerExceptionHandler        :32   [32m                  [0;39m 参数校验失败：【密码】不能为空
+2021-04-13 16:42:20.984 WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver   :207  [32m                  [0;39m Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public blog.resp.CommonResp blog.controller.UserController.save(blog.req.UserSaveReq) with 3 errors: [Field error in object 'userSaveReq' on field 'password': rejected value [null]; codes [NotEmpty.userSaveReq.password,NotEmpty.password,NotEmpty.java.lang.String,NotEmpty]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [userSaveReq.password,password]; arguments []; default message [password]]; default message [【密码】不能为空]] [Field error in object 'userSaveReq' on field 'name': rejected value [null]; codes [NotEmpty.userSaveReq.name,NotEmpty.name,NotEmpty.java.lang.String,NotEmpty]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [userSaveReq.name,name]; arguments []; default message [name]]; default message [【昵称】不能为空]] [Field error in object 'userSaveReq' on field 'loginName': rejected value [null]; codes [NotEmpty.userSaveReq.loginName,NotEmpty.loginName,NotEmpty.java.lang.String,NotEmpty]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [userSaveReq.loginName,loginName]; arguments []; default message [loginName]]; default message [【用户名】不能为空]] ]
+2021-04-13 16:42:24.071 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:42:24.071 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/save POST
+2021-04-13 16:42:24.072 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.save
+2021-04-13 16:42:24.072 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:42:24.072 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{"loginName":"dqwd","name":"qwdqw"}]
+2021-04-13 16:42:24.083 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":{"id":37095028862095360},"success":true}
+2021-04-13 16:42:24.083 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：12 ms -------------
+2021-04-13 16:42:24.100 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:42:24.100 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/list GET
+2021-04-13 16:42:24.100 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.list
+2021-04-13 16:42:24.100 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:42:24.101 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{}]
+2021-04-13 16:42:24.102 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"id":1,"loginName":"kkk","name":"测试"},{"id":2,"loginName":"admin","name":"管理员"},{"id":37095028862095360,"loginName":"dqwd","name":"qwdqw"}],"success":true}
+2021-04-13 16:42:24.102 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：2 ms -------------
+2021-04-13 16:42:29.550 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:42:29.551 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/delete/37095028862095360 DELETE
+2021-04-13 16:42:29.551 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.delete
+2021-04-13 16:42:29.551 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:42:29.552 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [37095028862095360]
+2021-04-13 16:42:29.557 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"success":true}
+2021-04-13 16:42:29.557 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：7 ms -------------
+2021-04-13 16:42:29.579 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:42:29.580 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/list GET
+2021-04-13 16:42:29.580 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.list
+2021-04-13 16:42:29.580 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:42:29.580 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{}]
+2021-04-13 16:42:29.583 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"id":1,"loginName":"kkk","name":"测试"},{"id":2,"loginName":"admin","name":"管理员"}],"success":true}
+2021-04-13 16:42:29.583 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：4 ms -------------
+2021-04-13 16:42:59.460 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:42:59.463 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/list GET
+2021-04-13 16:42:59.464 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.list
+2021-04-13 16:42:59.464 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:42:59.465 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{}]
+2021-04-13 16:42:59.471 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"id":1,"loginName":"kkk","name":"测试"},{"id":2,"loginName":"admin","name":"管理员"}],"success":true}
+2021-04-13 16:42:59.472 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：12 ms -------------
+2021-04-13 16:43:02.016 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:43:02.016 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/list GET
+2021-04-13 16:43:02.017 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.list
+2021-04-13 16:43:02.017 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:43:02.017 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{}]
+2021-04-13 16:43:02.022 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"id":1,"loginName":"kkk","name":"测试"},{"id":2,"loginName":"admin","name":"管理员"}],"success":true}
+2021-04-13 16:43:02.023 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：7 ms -------------
+2021-04-13 16:43:06.314 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:43:06.315 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/save POST
+2021-04-13 16:43:06.315 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.save
+2021-04-13 16:43:06.316 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:43:06.316 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{"loginName":"dqwd","name":"qwdqwd"}]
+2021-04-13 16:43:06.321 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":{"id":37095206046273536},"success":true}
+2021-04-13 16:43:06.322 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：8 ms -------------
+2021-04-13 16:43:06.350 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:43:06.350 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/list GET
+2021-04-13 16:43:06.350 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.list
+2021-04-13 16:43:06.350 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:43:06.350 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{}]
+2021-04-13 16:43:06.352 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"id":1,"loginName":"kkk","name":"测试"},{"id":2,"loginName":"admin","name":"管理员"},{"id":37095206046273536,"loginName":"dqwd","name":"qwdqwd"}],"success":true}
+2021-04-13 16:43:06.352 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：2 ms -------------
+2021-04-13 16:43:09.128 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:43:09.128 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/delete/37095206046273536 DELETE
+2021-04-13 16:43:09.129 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.delete
+2021-04-13 16:43:09.129 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:43:09.129 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [37095206046273536]
+2021-04-13 16:43:09.132 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"success":true}
+2021-04-13 16:43:09.132 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：4 ms -------------
+2021-04-13 16:43:09.150 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:43:09.150 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/list GET
+2021-04-13 16:43:09.151 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.list
+2021-04-13 16:43:09.151 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:43:09.151 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{}]
+2021-04-13 16:43:09.152 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"id":1,"loginName":"kkk","name":"测试"},{"id":2,"loginName":"admin","name":"管理员"}],"success":true}
+2021-04-13 16:43:09.153 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：3 ms -------------
+2021-04-13 16:43:18.599 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:43:18.600 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/save POST
+2021-04-13 16:43:18.600 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.save
+2021-04-13 16:43:18.601 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:43:18.601 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{"loginName":"123123","name":"123123"}]
+2021-04-13 16:43:18.605 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":{"id":37095257569103872},"success":true}
+2021-04-13 16:43:18.606 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：7 ms -------------
+2021-04-13 16:43:18.629 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:43:18.630 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/list GET
+2021-04-13 16:43:18.630 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.list
+2021-04-13 16:43:18.630 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:43:18.630 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{}]
+2021-04-13 16:43:18.632 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"id":1,"loginName":"kkk","name":"测试"},{"id":2,"loginName":"admin","name":"管理员"},{"id":37095257569103872,"loginName":"123123","name":"123123"}],"success":true}
+2021-04-13 16:43:18.632 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：3 ms -------------
+2021-04-13 16:43:21.472 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:43:21.472 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/delete/37095257569103872 DELETE
+2021-04-13 16:43:21.473 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.delete
+2021-04-13 16:43:21.473 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:43:21.473 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [37095257569103872]
+2021-04-13 16:43:21.475 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"success":true}
+2021-04-13 16:43:21.475 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：3 ms -------------
+2021-04-13 16:43:21.493 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:43:21.493 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/list GET
+2021-04-13 16:43:21.494 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.list
+2021-04-13 16:43:21.494 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:43:21.494 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{}]
+2021-04-13 16:43:21.496 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"id":1,"loginName":"kkk","name":"测试"},{"id":2,"loginName":"admin","name":"管理员"}],"success":true}
+2021-04-13 16:43:21.496 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：3 ms -------------
+2021-04-13 16:49:31.664 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:49:31.668 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/list GET
+2021-04-13 16:49:31.669 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.list
+2021-04-13 16:49:31.669 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:49:31.670 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{}]
+2021-04-13 16:49:31.685 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"id":1,"loginName":"kkk","name":"测试"},{"id":2,"loginName":"admin","name":"管理员"}],"success":true}
+2021-04-13 16:49:31.685 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：21 ms -------------
+2021-04-13 16:50:19.309 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:50:19.310 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/list GET
+2021-04-13 16:50:19.310 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.list
+2021-04-13 16:50:19.310 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:50:19.310 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{}]
+2021-04-13 16:50:19.321 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"id":1,"loginName":"kkk","name":"测试"},{"id":2,"loginName":"admin","name":"管理员"}],"success":true}
+2021-04-13 16:50:19.321 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：12 ms -------------
+2021-04-13 16:50:47.033 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:50:47.034 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/list GET
+2021-04-13 16:50:47.034 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.list
+2021-04-13 16:50:47.035 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:50:47.035 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{}]
+2021-04-13 16:50:47.044 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"id":1,"loginName":"kkk","name":"测试"},{"id":2,"loginName":"admin","name":"管理员"}],"success":true}
+2021-04-13 16:50:47.045 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：12 ms -------------
+2021-04-13 16:52:03.618 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:52:03.620 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/list GET
+2021-04-13 16:52:03.622 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.list
+2021-04-13 16:52:03.622 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:52:03.623 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{}]
+2021-04-13 16:52:03.627 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"id":1,"loginName":"kkk","name":"测试"},{"id":2,"loginName":"admin","name":"管理员"}],"success":true}
+2021-04-13 16:52:03.628 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：10 ms -------------
+2021-04-13 16:52:09.670 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:52:09.671 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/list GET
+2021-04-13 16:52:09.671 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.list
+2021-04-13 16:52:09.671 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:52:09.671 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{}]
+2021-04-13 16:52:09.674 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"id":1,"loginName":"kkk","name":"测试"},{"id":2,"loginName":"admin","name":"管理员"}],"success":true}
+2021-04-13 16:52:09.674 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：4 ms -------------
+2021-04-13 16:57:18.518 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:57:18.522 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/list GET
+2021-04-13 16:57:18.523 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.list
+2021-04-13 16:57:18.523 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:57:18.524 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{}]
+2021-04-13 16:57:18.544 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"id":1,"loginName":"kkk","name":"测试"},{"id":2,"loginName":"admin","name":"管理员"}],"success":true}
+2021-04-13 16:57:18.544 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：26 ms -------------
+2021-04-13 16:57:42.706 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:57:42.707 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/save POST
+2021-04-13 16:57:42.707 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.save
+2021-04-13 16:57:42.707 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:57:42.708 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{"loginName":"admin2","name":"管理员 2 号"}]
+2021-04-13 16:57:42.722 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":{"id":37098881896550400},"success":true}
+2021-04-13 16:57:42.722 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：16 ms -------------
+2021-04-13 16:57:42.752 INFO  blog.aspect.LogAspect                             :55   [32m                  [0;39m ------------- 开始 -------------
+2021-04-13 16:57:42.753 INFO  blog.aspect.LogAspect                             :56   [32m                  [0;39m 请求地址: http://127.0.0.1:8880/user/list GET
+2021-04-13 16:57:42.753 INFO  blog.aspect.LogAspect                             :57   [32m                  [0;39m 类名方法: blog.controller.UserController.list
+2021-04-13 16:57:42.753 INFO  blog.aspect.LogAspect                             :58   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-04-13 16:57:42.754 INFO  blog.aspect.LogAspect                             :80   [32m                  [0;39m 请求参数: [{}]
+2021-04-13 16:57:42.756 INFO  blog.aspect.LogAspect                             :92   [32m                  [0;39m 返回结果: {"content":[{"id":1,"loginName":"kkk","name":"测试"},{"id":2,"loginName":"admin","name":"管理员"},{"id":37098881896550400,"loginName":"admin2","name":"管理员 2 号"}],"success":true}
+2021-04-13 16:57:42.756 INFO  blog.aspect.LogAspect                             :93   [32m                  [0;39m ------------- 结束 耗时：4 ms -------------
