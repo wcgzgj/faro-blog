@@ -14,7 +14,7 @@
 
             <el-row style="text-align: center">
                 <el-col :span="14" :offset="5" >
-                    <comment :comments="commentData"></comment>
+                    <!--<comment :comments="commentData"></comment>-->
                 </el-col>
             </el-row>
 
@@ -49,8 +49,8 @@
     import {Tool} from "@/util/tool";
     import router from "../router/index.ts";
 
-    import * as CommentData from '../mockdata'
-    import comment from '../components/comment.vue'
+    // import * as CommentData from '../mockdata'
+    // import comment from '../components/comment.vue'
 
 
     export default {
@@ -140,7 +140,6 @@
                 loading,
                 doc,
                 html,
-                CommentData,
 
 
                 handelOpen,

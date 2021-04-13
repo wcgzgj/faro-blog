@@ -1,0 +1,241 @@
+<template>
+
+
+    <el-row>
+        <el-col :span="18" :offset="3" style="margin-top: 30px">
+
+
+
+
+            <el-form :inline="true" :model="formInline" class="demo-form-inline">
+
+                <el-form-item>
+                    <el-input v-model="searchElem" placeholder="请输入内容"></el-input>
+                </el-form-item>
+
+                <el-form-item>
+                    <el-button
+                            type="primary"
+                            @click.native="handelSearch"
+                            icon="el-icon-search">
+                        搜索
+                    </el-button>
+                </el-form-item>
+
+                <el-form-item>
+                    <router-link :to="'/admin/userEdit'">
+                        <el-button type="primary" icon="el-icon-plus">
+                            新增
+                        </el-button>
+                    </router-link>
+                </el-form-item>
+
+            </el-form>
+
+
+
+        </el-col>
+        <el-col :span="18" :offset="3" style="margin-top: 30px ; margin-bottom: 30px">
+            <el-table
+                    v-loading="loading"
+                    :data="userList"
+                    border
+                    style="width: 100%; text-align: center">
+                <el-table-column
+                        label="登录名"
+                        >
+                    <template #default="scope">
+                        <span style="margin-left: 10px">{{ scope.row.loginName }}</span>
+                    </template>
+                </el-table-column>
+                <el-table-column
+                        label="昵称"
+                        >
+                    <template #default="scope">
+                        <span style="margin-left: 10px">{{ scope.row.name }}</span>
+                    </template>
+                </el-table-column>
+
+                <el-table-column
+                        label="密码"
+                >
+                    <template #default="scope">
+                        <span style="margin-left: 10px">{{ scope.row.password }}</span>
+                    </template>
+                </el-table-column>
+
+                <el-table-column
+                        label="操作"
+                        >
+                    <template #default="scope">
+
+                        <el-button
+                                size="mini"
+                                @click="handleEdit">编辑</el-button>
+                        &nbsp;&nbsp;
+                        <el-button
+                                size="mini"
+                                type="danger"
+                                @click="handleDelete(scope.$index, scope.row)">删除</el-button>
+                    </template>
+                </el-table-column>
+            </el-table>
+        </el-col>
+    </el-row>
+
+
+    <el-dialog title="用户信息" v-model="dialogFormVisible">
+        <!--<el-form :model="form">-->
+        <!--    <el-form-item label="活动名称" >-->
+        <!--        <el-input v-model="form.name" autocomplete="off"></el-input>-->
+        <!--    </el-form-item>-->
+        <!--    <el-form-item label="活动区域" >-->
+        <!--        <el-select v-model="form.region" placeholder="请选择活动区域">-->
+        <!--            <el-option label="区域一" value="shanghai"></el-option>-->
+        <!--            <el-option label="区域二" value="beijing"></el-option>-->
+        <!--        </el-select>-->
+        <!--    </el-form-item>-->
+        <!--</el-form>-->
+        <!--<template #footer>-->
+        <!--    <span class="dialog-footer">-->
+        <!--      <el-button @click="dialogFormVisible = false">取 消</el-button>-->
+        <!--      <el-button type="primary" @click="dialogFormVisible = false">确 定</el-button>-->
+        <!--    </span>-->
+        <!--</template>-->
+        <h3>这是模态框</h3>
+    </el-dialog>
+
+
+</template>
+
+<script lang="ts">
+    import { onMounted,ref } from 'vue';
+    import axios from "axios";
+    import {ElMessage} from "element-plus";
+    import { ElMessageBox } from 'element-plus';
+
+    export default {
+        name: "admin-user",
+
+        setup() {
+            /**
+             * ------数据定义------
+             */
+            const userList= ref();
+            userList.value=[];
+
+            const loading=ref();
+            loading.value=true;
+
+            const searchElem = ref();
+            searchElem.value="";
+
+            //用户修改模态框可视化
+            const dialogFormVisible = ref();
+            dialogFormVisible.value=false;
+
+
+
+            /**
+             * ------方法------
+             */
+
+            /**
+             * 初始打开页面时，进行查询操作
+             */
+            const handelOpen= () => {
+                loading.value=true;
+                axios.get("/user/list").then( (resp) => {
+                    const data = resp.data;
+                    if (data.success) {
+                        loading.value=false;
+                        userList.value=data.content;
+
+                        console.log(userList.value)
+                    } else {
+                        ElMessage("加载错误！")
+                    }
+                });
+            }
+
+            const handleEdit=(index: any, row: any) =>{
+               /**
+                * 点击编辑按钮，会直接路由跳转
+                * 跳转到编辑页面
+                * 所以用不到 handleEdit 函数
+                * 但是放在这里，是为了方便以后如果要复制这个组件
+                * 可以再复用
+                */
+               dialogFormVisible.value=true;
+            }
+
+            /**
+             * 文章删除功能
+             */
+            const handleDelete=(index: any, row: any) =>{
+                ElMessageBox.confirm('此操作将永久删除该文件, 是否继续?', '提示', {
+                    confirmButtonText: '确定',
+                    cancelButtonText: '取消',
+                    type: 'warning'
+                }).then(() => {
+                    axios.delete("/user/delete/"+row.id).then((resp)=> {
+                        const data=resp.data;
+                        if (data.success) {
+                            ElMessage.success("删除成功！");
+                            handelOpen();
+                        } else {
+                            ElMessage.error("删除失败！")
+                        }
+                    });
+                }).catch(() => {
+                    ElMessage("已取消删除")
+                });
+            }
+
+
+            /**
+             * 文章检索功能
+             */
+            const handelSearch = () => {
+                loading.value=true;
+                axios.get("/user/list",{
+                    params: {
+                        loginName: searchElem.value
+                    }
+                }).then( (resp)=> {
+                    const data = resp.data;
+                    if (data.success) {
+                        loading.value = false;
+                        userList.value = data.content;
+                    } else {
+                        ElMessage.error("查询无果！");
+                    }
+                });
+            }
+
+
+            onMounted(() => {
+               handelOpen();
+            });
+
+
+            /**
+             * ------返回------
+             */
+            return {
+                userList,
+                loading,
+                searchElem,
+                dialogFormVisible,
+
+                handleEdit,
+                handleDelete,
+                handelSearch
+            }
+        }
+    }
+</script>
+
+<style scoped>
+
+</style>

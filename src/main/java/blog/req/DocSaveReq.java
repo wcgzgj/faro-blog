@@ -1,7 +1,6 @@
 package blog.req;
 
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 
 public class DocSaveReq {
     private Long id;
