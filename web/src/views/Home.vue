@@ -3,13 +3,14 @@
   <el-container v-loading="loading">
 
     <el-main>
+
+      <!--文章内容显示-->
       <el-row :gutter="20" v-for="docItem in docList">
+
         <el-col :span="20" :offset="2">
 
           <!--文章内容显示-->
           <el-card :body-style="{ padding: '0px' ,marginTop: '20px'}" class="artical-card">
-
-
             <el-container>
 
               <el-container>
@@ -48,14 +49,12 @@
                 </div>
               </el-aside>
             </el-container>
-
-
           </el-card>
         </el-col>
 
       </el-row>
 
-
+      <!--分页-->
       <el-row :gutter="20">
         <el-col :span="20" :offset="2">
           <!--分页-->
@@ -65,13 +64,14 @@
                   :page-size="pageSize"
                   background
                   layout="prev, pager, next"
-                  :total="50">
+                  :total="total">
           </el-pagination>
 
 
         </el-col>
 
       </el-row>
+
     </el-main>
 
 
@@ -153,27 +153,11 @@ export default defineComponent({
      * ------方法------
      */
 
-    /**
-     * 初始打开页面时，进行查询操作
-     */
-    // const handelOpen= () => {
-    //   loading.value=true;
-    //   axios.get("/doc/list").then( (resp) => {
-    //     const data = resp.data;
-    //     if (data.success) {
-    //       loading.value=false;
-    //       docList.value=data.content;
-    //     } else {
-    //       ElMessage("加载错误！")
-    //     }
-    //   });
-    // }
-
 
     /**
      * 分页功能
      */
-    //修改 total 的值(conut(*)函数，并回，能修改显示的总页数
+    //总内容属，返回数据库中所有行的个数，方便页码的更新
     const total = ref();
     total.value = 5;
 
@@ -202,10 +186,12 @@ export default defineComponent({
           if (data.success) {
             loading.value=false;
             docList.value=data.content.list;
+            total.value=data.content.total;
           } else {
             ElMessage("加载错误！")
           }
         });
+
     }
 
 
