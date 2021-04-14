@@ -174,24 +174,23 @@ export default defineComponent({
     }
 
       //获取数据
-      const handelOpen = (pageNum, pageSize) => {
-        loading.value=true;
-        axios.get("/doc/list",{
-          params: {
-            page: pageNum,
-            size: pageSize
-          }
-        }).then( (resp) => {
-          const data = resp.data;
-          if (data.success) {
-            loading.value=false;
-            docList.value=data.content.list;
-            total.value=data.content.total;
-          } else {
-            ElMessage("加载错误！")
-          }
-        });
-
+    const handelOpen = (pageNum, pageSize) => {
+      loading.value=true;
+      axios.get("/doc/list",{
+        params: {
+          page: pageNum,
+          size: pageSize
+        }
+      }).then( (resp) => {
+        const data = resp.data;
+        if (data.success) {
+          loading.value=false;
+          docList.value=data.content.list;
+          total.value=data.content.total;
+        } else {
+          ElMessage("加载错误！")
+        }
+      });
     }
 
 

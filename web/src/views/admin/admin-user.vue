@@ -298,7 +298,7 @@
                     const data = resp.data;
                     if (data.success) {
                         loading.value = false;
-                        userList.value = data.content;
+                        userList.value = data.content.list;
                     } else {
                         ElMessage.error("查询无果！");
                     }

@@ -78,6 +78,24 @@
         </el-col>
     </el-row>
 
+    <!--分页-->
+    <el-row :gutter="20" style="margin-bottom: 35px">
+        <el-col :span="20" :offset="2">
+            <!--分页-->
+            <el-pagination
+                    @current-change="handleCurrentChange"
+                    :current-page="pageNum"
+                    :page-size="pageSize"
+                    background
+                    layout="prev, pager, next"
+                    :total="total">
+            </el-pagination>
+
+
+        </el-col>
+
+    </el-row>
+
 
 </template>
 
@@ -109,29 +127,45 @@
              * ------方法------
              */
 
-
             /**
-             * 初始打开页面时，进行查询操作
+             * 分页功能
              */
-            const handelOpen= () => {
+                //总内容属，返回数据库中所有行的个数，方便页码的更新
+            const total = ref();
+            total.value = 5;
+
+            const pageNum = ref();
+            pageNum.value = 1;
+
+            const pageSize = ref();
+            pageSize.value = 5;
+
+
+            const handleCurrentChange = (currentPage) => {
+                pageNum.value = currentPage
+                handelOpen(pageNum.value,pageSize.value)
+            }
+
+            //获取数据
+            const handelOpen = (pageNum, pageSize) => {
                 loading.value=true;
                 axios.get("/doc/list",{
                     params: {
-                        page: 1,
-                        size: 1000
+                        page: pageNum,
+                        size: pageSize
                     }
                 }).then( (resp) => {
                     const data = resp.data;
                     if (data.success) {
                         loading.value=false;
                         docList.value=data.content.list;
-
-                        console.log(docList.value)
+                        total.value=data.content.total;
                     } else {
                         ElMessage("加载错误！")
                     }
                 });
             }
+
 
             const handleEdit=(index: any, row: any) =>{
                /**
@@ -156,7 +190,7 @@
                         const data=resp.data;
                         if (data.success) {
                             ElMessage.success("删除成功！");
-                            handelOpen();
+                            handelOpen(1,5);
                         } else {
                             ElMessage.error("删除失败！")
                         }
@@ -174,13 +208,17 @@
                 loading.value=true;
                 axios.get("/doc/list",{
                     params: {
+                        page: 1,
+                        size: 1000,
                         name: searchElem.value
                     }
                 }).then( (resp)=> {
                     const data = resp.data;
                     if (data.success) {
                         loading.value = false;
-                        docList.value = data.content;
+                        docList.value = data.content.list;
+                        total.value=data.content.total;
+                        alert(pageSize.value)
                     } else {
                         ElMessage.error("查询无果！");
                     }
@@ -189,7 +227,7 @@
 
 
             onMounted(() => {
-               handelOpen();
+               handelOpen(pageNum.value,pageSize.value);
             });
 
 
@@ -200,10 +238,15 @@
                 docList,
                 loading,
                 searchElem,
+                pageNum,
+                pageSize,
+                total,
+
 
                 handleEdit,
                 handleDelete,
-                handelSearch
+                handelSearch,
+                handleCurrentChange
             }
         }
     }
