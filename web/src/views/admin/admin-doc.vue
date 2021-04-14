@@ -32,9 +32,6 @@
                 </el-form-item>
 
             </el-form>
-
-
-
         </el-col>
         <el-col :span="18" :offset="3" style="margin-top: 30px ; margin-bottom: 30px">
             <el-table
@@ -90,10 +87,7 @@
                     layout="prev, pager, next"
                     :total="total">
             </el-pagination>
-
-
         </el-col>
-
     </el-row>
 
 

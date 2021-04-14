@@ -1,5 +1,5 @@
 <template>
-  <el-container style=" border: 1px solid #eee" direction="vertical">
+  <el-container direction="vertical">
     <the-header></the-header>
     <router-view/>
     <the-footer></the-footer>

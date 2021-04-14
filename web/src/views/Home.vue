@@ -5,7 +5,7 @@
     <el-main>
 
       <!--文章内容显示-->
-      <el-row :gutter="20" v-for="docItem in docList">
+      <el-row :gutter="20" v-for="docItem in docList" :key="docItem.id">
 
         <el-col :span="20" :offset="2">
 
