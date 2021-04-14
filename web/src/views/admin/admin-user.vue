@@ -214,11 +214,16 @@
              */
             const handelOpen= () => {
                 loading.value=true;
-                axios.get("/user/list").then( (resp) => {
+                axios.get("/user/list",{
+                    params: {
+                        page: 1,
+                        size: 1000
+                    }
+                }).then( (resp) => {
                     const data = resp.data;
                     if (data.success) {
                         loading.value=false;
-                        userList.value=data.content;
+                        userList.value=data.content.list;
 
                         console.log(userList.value)
                     } else {

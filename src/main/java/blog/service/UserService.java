@@ -6,10 +6,13 @@ import blog.pojo.UserExample;
 import blog.req.UserQueryReq;
 import blog.req.UserResetPasswordReq;
 import blog.req.UserSaveReq;
+import blog.resp.PageResp;
 import blog.resp.UserQueryResp;
 import blog.resp.UserSaveResp;
 import blog.util.CopyUtil;
 import blog.util.SnowFlake;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -71,18 +74,30 @@ public class UserService {
      * 获取文章信息
      * @return
      */
-    public List<UserQueryResp> list(UserQueryReq req) {
+    public PageResp<UserQueryResp> list(UserQueryReq req) {
         UserExample userExample = new UserExample();
         UserExample.Criteria criteria = userExample.createCriteria();
 
         //名字不空，说明是查询
         if (!ObjectUtils.isEmpty(req.getLoginName())) {
-            criteria.andLoginNameLike("%"+req.getLoginName()+"%");
+            criteria.andLoginNameLike("%" + req.getLoginName() + "%");
         }
 
+        /**
+         * 使用 PageHelper 帮助后台分页
+         */
+        PageHelper.startPage(req.getPage(), req.getSize());
         List<User> users = userMapper.selectByExample(userExample);
         List<UserQueryResp> userQueryResps = CopyUtil.copyList(users, UserQueryResp.class);
-        return userQueryResps;
+
+
+        PageInfo<User> info = new PageInfo<>(users);
+
+        PageResp<UserQueryResp> pageResp = new PageResp<>();
+        pageResp.setTotal(info.getTotal());
+        pageResp.setList(userQueryResps);
+
+        return pageResp;
     }
 
 

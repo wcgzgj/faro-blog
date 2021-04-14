@@ -109,16 +109,22 @@
              * ------方法------
              */
 
+
             /**
              * 初始打开页面时，进行查询操作
              */
             const handelOpen= () => {
                 loading.value=true;
-                axios.get("/doc/list").then( (resp) => {
+                axios.get("/doc/list",{
+                    params: {
+                        page: 1,
+                        size: 1000
+                    }
+                }).then( (resp) => {
                     const data = resp.data;
                     if (data.success) {
                         loading.value=false;
-                        docList.value=data.content;
+                        docList.value=data.content.list;
 
                         console.log(docList.value)
                     } else {

@@ -4,6 +4,7 @@ import blog.req.UserQueryReq;
 import blog.req.UserResetPasswordReq;
 import blog.req.UserSaveReq;
 import blog.resp.CommonResp;
+import blog.resp.PageResp;
 import blog.resp.UserQueryResp;
 import blog.resp.UserSaveResp;
 import blog.service.UserService;
@@ -39,9 +40,9 @@ public class UserController {
      */
     @GetMapping("/list")
     public CommonResp list(@Valid UserQueryReq req) {
-        List<UserQueryResp> list = userService.list(req);
-        CommonResp<List<UserQueryResp>> resp = new CommonResp<>();
-        resp.setContent(list);
+        PageResp<UserQueryResp> pageResp = userService.list(req);
+        CommonResp<PageResp<UserQueryResp>> resp = new CommonResp<>();
+        resp.setContent(pageResp);
         return resp;
     }
 

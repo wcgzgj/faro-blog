@@ -9,8 +9,11 @@ import blog.req.DocQueryReq;
 import blog.req.DocSaveReq;
 import blog.resp.DocQueryResp;
 import blog.resp.DocSaveResp;
+import blog.resp.PageResp;
 import blog.util.CopyUtil;
 import blog.util.SnowFlake;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -92,18 +95,33 @@ public class DocService {
      * 获取文章信息
      * @return
      */
-    public List<DocQueryResp> list(DocQueryReq req) {
+    public PageResp<DocQueryResp> list(DocQueryReq req) {
         DocExample docExample = new DocExample();
         DocExample.Criteria criteria = docExample.createCriteria();
 
-        //名字不空，说明是查询
+        /**
+         * 名字不空，说明是查询
+         *
+         * 分页之所以可以和查询放在一起，是因为当分页的时候
+         * 不会传进 name,所以模糊查询还是将所有内容查询进来
+         * 而且 SQL 显示的是 分页和模糊查询写在一起的
+         * 所以，也不会出现查询两次 SQL 的情况
+         */
         if (!ObjectUtils.isEmpty(req.getName())) {
             criteria.andNameLike("%"+req.getName()+"%");
         }
 
+
+        PageHelper.startPage(req.getPage(),req.getSize());
         List<Doc> docs = docMapper.selectByExample(docExample);
         List<DocQueryResp> docQueryResps = CopyUtil.copyList(docs, DocQueryResp.class);
-        return docQueryResps;
+
+        PageInfo info = new PageInfo(docs);
+        PageResp<DocQueryResp> pageResp = new PageResp<>();
+        pageResp.setTotal(info.getTotal());
+        pageResp.setList(docQueryResps);
+
+        return pageResp;
     }
 
 

@@ -1,6 +1,6 @@
 package blog.req;
 
-public class UserQueryReq {
+public class UserQueryReq extends PageReq{
     private Long id;
 
     private String loginName;

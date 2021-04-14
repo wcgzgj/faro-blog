@@ -1,6 +1,6 @@
 package blog.req;
 
-public class DocQueryReq {
+public class DocQueryReq extends PageReq{
     private Long id;
 
     private String name;

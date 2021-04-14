@@ -55,17 +55,23 @@
 
       </el-row>
 
+
       <el-row :gutter="20">
         <el-col :span="20" :offset="2">
           <!--分页-->
           <el-pagination
+                  @current-change="handleCurrentChange"
+                  :current-page="pageNum"
+                  :page-size="pageSize"
                   background
                   layout="prev, pager, next"
                   :total="50">
           </el-pagination>
-        </el-col>
-      </el-row>
 
+
+        </el-col>
+
+      </el-row>
     </el-main>
 
 
@@ -150,29 +156,75 @@ export default defineComponent({
     /**
      * 初始打开页面时，进行查询操作
      */
-    const handelOpen= () => {
-      loading.value=true;
-      axios.get("/doc/list").then( (resp) => {
-        const data = resp.data;
-        if (data.success) {
-          loading.value=false;
-          docList.value=data.content;
-        } else {
-          ElMessage("加载错误！")
-        }
-      });
+    // const handelOpen= () => {
+    //   loading.value=true;
+    //   axios.get("/doc/list").then( (resp) => {
+    //     const data = resp.data;
+    //     if (data.success) {
+    //       loading.value=false;
+    //       docList.value=data.content;
+    //     } else {
+    //       ElMessage("加载错误！")
+    //     }
+    //   });
+    // }
+
+
+    /**
+     * 分页功能
+     */
+    //修改 total 的值(conut(*)函数，并回，能修改显示的总页数
+    const total = ref();
+    total.value = 5;
+
+    const pageNum = ref();
+    pageNum.value = 1;
+
+    const pageSize = ref();
+    pageSize.value = 3;
+
+
+    const handleCurrentChange = (currentPage) => {
+      pageNum.value = currentPage
+      handelOpen(pageNum.value,pageSize.value)
+    }
+
+      //获取数据
+      const handelOpen = (pageNum, pageSize) => {
+        loading.value=true;
+        axios.get("/doc/list",{
+          params: {
+            page: pageNum,
+            size: pageSize
+          }
+        }).then( (resp) => {
+          const data = resp.data;
+          if (data.success) {
+            loading.value=false;
+            docList.value=data.content.list;
+          } else {
+            ElMessage("加载错误！")
+          }
+        });
     }
 
 
+
+
     onMounted(()=> {
-      handelOpen();
+      handelOpen(pageNum.value,pageSize.value);
     })
 
     return {
       docList,
       loading,
       docPath,
-      dateValue
+      dateValue,
+      total,
+      pageNum,
+      pageSize,
+
+      handleCurrentChange
     }
   }
 });

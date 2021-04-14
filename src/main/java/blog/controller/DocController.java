@@ -5,6 +5,7 @@ import blog.req.DocSaveReq;
 import blog.resp.CommonResp;
 import blog.resp.DocQueryResp;
 import blog.resp.DocSaveResp;
+import blog.resp.PageResp;
 import blog.service.DocService;
 import org.springframework.web.bind.annotation.*;
 
@@ -33,9 +34,9 @@ public class DocController {
      */
     @GetMapping("/list")
     public CommonResp list(@Valid DocQueryReq req) {
-        List<DocQueryResp> list = docService.list(req);
-        CommonResp<List<DocQueryResp>> resp = new CommonResp<>();
-        resp.setContent(list);
+        PageResp<DocQueryResp> pageResp = docService.list(req);
+        CommonResp<PageResp<DocQueryResp>> resp = new CommonResp<>();
+        resp.setContent(pageResp);
         return resp;
     }
 
