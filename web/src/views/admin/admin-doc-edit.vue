@@ -55,7 +55,7 @@
 
         <div style="height:100%;">
             <el-scrollbar style="height:100%">
-                <div class="wangeditor" style="margin: 30px; width:700px;height:700px;" :innerHTML="previewHtml"></div>
+                <vue3-markdown-it :source='previewDoc' />
             </el-scrollbar>
         </div>
 
@@ -148,7 +148,7 @@
                 axios.get("/doc/find-content/"+id).then( (resp) => {
                     const data = resp.data;
                     if (data.success) {
-                        editor.txt.html(data.content);
+                        editor.txt.text(data.content);
                     } else {
                         ElMessage("文章内容加载错误！")
                     }
@@ -159,10 +159,9 @@
             /**
              * 富文本预览
              */
-            const previewHtml = ref();
+            const previewDoc = ref();
             const handelPreview = () => {
-                const html = editor.txt.html();
-                previewHtml.value = html;
+                previewDoc.value = editor.txt.text();
             }
 
 
@@ -171,7 +170,7 @@
              */
             const handelSave = () => {
                 //将文章信息存入 doc 中
-                doc.value.content=editor.txt.html()
+                doc.value.content=editor.txt.text()
 
                 console.log(doc.value);
                 axios.post("/doc/save", doc.value).then( (resp)=> {
@@ -218,7 +217,7 @@
                 loading,
                 doc,
                 drawer,
-                previewHtml,
+                previewDoc,
 
                 handelPreview,
                 handelSave,
