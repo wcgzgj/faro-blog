@@ -39,21 +39,16 @@
             </el-link>
         </el-menu-item>
 
-        <div style="margin-right: 40px">
-            <!--<el-link icon="el-icon-edit" class="login-menu" v-show="user.id" style="color: red">-->
-            <!--    <span>你好: {{user.name}}</span>-->
-            <!--</el-link>-->
-            <!--&nbsp;&nbsp;-->
-            <!--<el-link class="login-menu" @click="showLoginModal" v-show="!user.id">-->
-            <!--    <span>登录</span>-->
-            <!--</el-link>-->
-            <a class="login-menu" v-show="user.id">
-                <span>你好: {{user.name}}</span>
-            </a>
 
-            <a class="login-menu" @click="showLoginModal" v-show="!user.id">
+        <!--登录及用户名显示-->
+        <div style="margin-right: 40px">
+            <router-link to="#" class="login-menu" v-show="user.id">
+                <span>你好: {{user.name}}</span>
+            </router-link>
+
+            <router-link to="/login" class="login-menu" @click="showLoginModal" v-show="!user.id">
                 <span>登录</span>
-            </a>
+            </router-link>
         </div>
 
     </el-menu>
@@ -119,9 +114,6 @@
                          */
                         store.commit("setUser",data.content);
                     } else {
-                        /**
-                         * 使用 antd 的组件，弹出错误信息
-                         */
                         ElMessage.error(data.message);
                     }
                 });
@@ -177,6 +169,7 @@
         float: right;
         color: white;
         padding-left: 10px;
+        text-decoration: none;
     }
 
 </style>
