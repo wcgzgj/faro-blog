@@ -24,40 +24,54 @@
 
     <!--</el-container>-->
 
-    <div class="login" clearfix >
-        <div class="login-wrap">
-            <el-row type="flex" justify="center">
-                <el-form ref="loginForm" :model="user" :rules="rules" status-icon label-width="80px">
-                    <h3>登录</h3>
-                    <hr>
-                    <el-form-item prop="username" label="用户名">
-                        <el-input v-model="user.username" placeholder="请输入用户名" prefix-icon prop="name"></el-input>
-                    </el-form-item>
-                    <el-form-item id="password" prop="password" label="密码">
-                        <el-input v-model="user.password" show-password placeholder="请输入密码" prop="password"></el-input>
-                    </el-form-item>
-                    <el-form-item>
-                        <router-link to="/">找回密码</router-link>
-                        &nbsp;&nbsp;
-                        <router-link to="/register">注册账号</router-link>
-                    </el-form-item>
+    <el-container>
+        <div class="login" clearfix >
+            <div class="login-wrap">
+                <el-row type="flex" justify="center">
+                    <el-form ref="loginForm" :model="user" status-icon label-width="80px">
+                        <h3>登录</h3>
+                        <hr>
+                        <el-form-item  label="用户名">
+                            <el-input v-model="user.loginName" placeholder="请输入用户名" prefix-icon ></el-input>
+                        </el-form-item>
 
-                    <el-form-item style="text-align: center ">
-                        <el-button type="primary" @click="doLogin()" style="margin-bottom: 20px" >登 录</el-button>
-                    </el-form-item>
+                        <el-form-item id="password" label="密码">
+                            <el-input v-model="user.password" show-password placeholder="请输入密码"></el-input>
+                        </el-form-item>
 
-                </el-form>
-            </el-row>
+                        <!--<el-form-item id="password2" label="确认密码">-->
+                        <!--    <el-input v-model="user.password2" show-password placeholder="请确认密码"></el-input>-->
+                        <!--</el-form-item>-->
+
+
+                        <el-form-item>
+                            <router-link to="/find-password">找回密码</router-link>
+                            &nbsp;&nbsp;
+                            <router-link to="/register">注册账号</router-link>
+                        </el-form-item>
+
+                        <el-form-item style="text-align: center ">
+                            <el-button type="primary" @click="doLogin" style="margin-bottom: 20px" >登 录</el-button>
+                        </el-form-item>
+
+                    </el-form>
+                </el-row>
+            </div>
         </div>
-    </div>
+    </el-container>
 
 
 </template>
 
-<script>
+<script lang="ts">
     import { defineComponent,onMounted,ref } from 'vue';
     import axios from "axios";
     import { ElMessage } from 'element-plus'
+    import store from "@/store";
+    import {Tool} from "@/util/tool";
+
+    declare let hexMd5;
+    declare let KEY;
 
     export default {
         name: "login",
@@ -71,68 +85,40 @@
 
 
             const doLogin = () => {
-                // if (!this.user.username) {
-                //     this.$message.error("请输入用户名！");
-                //     return;
-                // } else if (!this.user.password) {
-                //     this.$message.error("请输入密码！");
-                //     return;
-                // } else {
-                //     //校验用户名和密码是否正确;
-                //     // this.$router.push({ path: "/personal" });
-                //     axios
-                //         .post("/login/", {
-                //             name: this.user.username,
-                //             password: this.user.password
-                //         })
-                //         .then(res => {
-                //             // console.log("输出response.data.status", res.data.status);
-                //             if (res.data.status === 200) {
-                //                 this.$router.push({ path: "/personal" });
-                //             } else {
-                //                 alert("您输入的用户名或密码错误！");
-                //             }
-                //         });
-                // }
-            }
+                console.log("开始登录!")
 
-            const validatePass = (rule, value, callback) => {
-                // if (value === '') {
-                //     callback(new Error('请输入密码'));
-                // } else {
-                //     if (user.value.password !== '') {
-                //         this.$refs.ruleForm.validateField('checkPass');
-                //     }
-                //     callback();
-                // }
-            }
+                //密码未输入，则不进行 MD5 加密
+                if(!Tool.isEmpty(user.value.password)) {
+                    user.value.password = hexMd5(user.value.password + KEY);
+                }
 
-            const validatePass2 = (rule, value, callback) => {
-                // if (value === '') {
-                //     callback(new Error('请再次输入密码'));
-                // } else if (value !== this.ruleForm.pass) {
-                //     callback(new Error('两次输入密码不一致!'));
-                // } else {
-                //     callback();
-                // }
-            }
+                console.log("登录、前端加密后："+user.value.password)
 
+                axios.post("/user/login",user.value).then((response)=>{
+
+                    const data = response.data;
+                    if (data.success) {
+
+                        ElMessage.success("登录成功!")
+                        /**
+                         * setUser: vuex 中 mutations中的方法
+                         *
+                         * 后面的参数，都是我们在 mutations 中自定义方法的参数
+                         * state 参数因为是自带的，所以没有必要写
+                         */
+                        store.commit("setUser",data.content);
+                    } else {
+                        ElMessage.error(data.message);
+                    }
+                });
+            }
 
 
 
             return {
                 user,
 
-                doLogin,
-
-                rules: {
-                    pass: [
-                        { validator: validatePass, trigger: 'blur' }
-                    ],
-                    checkPass: [
-                        { validator: validatePass2, trigger: 'blur' }
-                    ],
-                }
+                doLogin
             }
         }
     }
@@ -156,7 +142,7 @@
     .login-wrap {
         background-size: cover;
         width: 400px;
-        height: 350px;
+        height: 400px;
         margin: 120px auto;
         overflow: hidden;
         line-height: 40px;
@@ -165,9 +151,7 @@
         border: 2px;
         padding: 20px;
     }
-    #password {
-        margin-bottom: 5px;
-    }
+
     h3 {
         color: #0babeab8;
         font-size: 24px;
@@ -184,6 +168,8 @@
     a:hover {
         color: coral;
     }
+
+
     .el-button {
         width: 80%;
         margin-left: -50px;

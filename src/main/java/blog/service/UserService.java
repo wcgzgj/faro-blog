@@ -1,12 +1,16 @@
 package blog.service;
 
+import blog.exception.BusinessException;
+import blog.exception.BusinessExceptionCode;
 import blog.mapper.UserMapper;
 import blog.pojo.User;
 import blog.pojo.UserExample;
+import blog.req.UserLoginReq;
 import blog.req.UserQueryReq;
 import blog.req.UserResetPasswordReq;
 import blog.req.UserSaveReq;
 import blog.resp.PageResp;
+import blog.resp.UserLoginResp;
 import blog.resp.UserQueryResp;
 import blog.resp.UserSaveResp;
 import blog.util.CopyUtil;
@@ -16,6 +20,7 @@ import com.github.pagehelper.PageInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 import org.springframework.util.ObjectUtils;
 
 import javax.annotation.Resource;
@@ -134,6 +139,54 @@ public class UserService {
         userMapper.updateByPrimaryKeySelective(user);
     }
 
+    /**
+     * 依据登录名去查询数据库
+     * 不使用模糊查询
+     * @param loginName
+     * @return
+     */
+    public User selectByLoginName(String loginName) {
+        UserExample userExample = new UserExample();
+        UserExample.Criteria criteria = userExample.createCriteria();
+        criteria.andLoginNameEqualTo(loginName);
+
+        /**
+         * 虽然查出来的最多只可能是一条
+         * 但是，我们还是要用 list 去接收
+         */
+        List<User> userList = userMapper.selectByExample(userExample);
+
+        /**
+         * 这里不用 size()==0去判断，是因为担心 userList 还可能是 null
+         */
+        if (CollectionUtils.isEmpty(userList)) {
+            return null;
+        } else {
+            return userList.get(0);
+        }
+    }
+
+    /**
+     * 用户登录
+     * @param req
+     * @return
+     */
+    public UserLoginResp login(UserLoginReq req) {
+        User userDB = selectByLoginName(req.getLoginName());
+        if (ObjectUtils.isEmpty(userDB)) {
+            LOG.info("用户名不存在, {}", req.getLoginName());
+            throw new BusinessException(BusinessExceptionCode.LOGIN_USER_ERROR);
+        } else {
+            if (userDB.getPassword().equals(req.getPassword())) {
+                //登陆成功
+                UserLoginResp userLoginResp = CopyUtil.copy(userDB, UserLoginResp.class);
+                return userLoginResp;
+            } else {
+                LOG.info("密码不对, 输入密码：{}, 数据库密码：{}", req.getPassword(), userDB.getPassword());
+                throw new BusinessException(BusinessExceptionCode.LOGIN_USER_ERROR);
+            }
+        }
+    }
 
 
 }

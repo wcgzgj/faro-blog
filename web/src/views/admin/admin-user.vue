@@ -134,9 +134,9 @@
 
 
     <el-dialog title="重置密码" v-model="resetDialogFormVisible">
-        <el-form :model="newPassword">
+        <el-form :model="newPasswordUser">
             <el-form-item label="密码">
-                <el-input v-model="newPassword.password" autocomplete="off" placeholder="请输入新密码"></el-input>
+                <el-input v-model="newPasswordUser.password" autocomplete="off" placeholder="请输入新密码"></el-input>
             </el-form-item>
         </el-form>
 
@@ -201,9 +201,9 @@
             const newUser = ref();
             newUser.value = {};
 
-            //新增用户
-            const newPassword = ref();
-            newPassword.value = {};
+            //新密码
+            const newPasswordUser = ref();
+            newPasswordUser.value = {};
 
 
 
@@ -250,8 +250,8 @@
              */
             const handleReset=(index: any, row: any) =>{
                 resetDialogFormVisible.value=true;
-                newPassword.value = Tool.copy(row)
-                newPassword.value.password="";
+                newPasswordUser.value = Tool.copy(row)
+                newPasswordUser.value.password="";
             }
 
 
@@ -356,7 +356,9 @@
              */
             const handelResetModalOk = () => {
 
-                axios.post("/user/reset-password",newPassword.value).then((resp)=>{
+                newPasswordUser.value.password = hexMd5(newPasswordUser.value.password + KEY);
+
+                axios.post("/user/reset-password",newPasswordUser.value).then((resp)=>{
                     const data = resp.data;
                     if (data.success) {
                         resetDialogFormVisible.value = false;
@@ -386,7 +388,7 @@
                 user,
                 newUser,
                 resetDialogFormVisible,
-                newPassword,
+                newPasswordUser,
 
                 handleEdit,
                 handleDelete,

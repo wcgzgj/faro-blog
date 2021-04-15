@@ -8,6 +8,12 @@ spring:
     password: faro-blog
     driver-class-name: com.mysql.cj.jdbc.Driver
 
+  # redis配置
+  redis:
+    host: r-uf6ljbcdaxobsifyctpd.redis.rds.aliyuncs.com
+    port: 6379
+    password: Redis000
+
 
 # 整合Mybatis
 mybatis:

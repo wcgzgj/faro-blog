@@ -1,21 +1,23 @@
 package blog.controller;
 
+import blog.req.UserLoginReq;
 import blog.req.UserQueryReq;
 import blog.req.UserResetPasswordReq;
 import blog.req.UserSaveReq;
-import blog.resp.CommonResp;
-import blog.resp.PageResp;
-import blog.resp.UserQueryResp;
-import blog.resp.UserSaveResp;
+import blog.resp.*;
 import blog.service.UserService;
+import blog.util.SnowFlake;
+import com.alibaba.fastjson.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.util.DigestUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.validation.Valid;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @ClassName UserController
@@ -32,6 +34,15 @@ public class UserController {
 
     @Resource
     private UserService userService;
+
+    @Resource
+    private SnowFlake snowFlake;
+
+    /**
+     * redis 工具
+     */
+    @Resource
+    private RedisTemplate redisTemplate;
 
     /**
      * 查询电子书信息
@@ -81,6 +92,7 @@ public class UserController {
     @PostMapping("/reset-password")
     public CommonResp resetPassword(@RequestBody @Valid UserResetPasswordReq req) {
         req.setPassword(DigestUtils.md5DigestAsHex(req.getPassword().getBytes()));
+        LOG.info("重置、后端加密："+req.getPassword());
         userService.resetPassword(req);
 
         CommonResp resp = new CommonResp<>();
@@ -100,6 +112,38 @@ public class UserController {
         commonResp.setContent(resp);
         LOG.info("find返回的数据为:"+commonResp );
         return commonResp;
+    }
+
+    @PostMapping("/login")
+    public CommonResp login(@Valid @RequestBody UserLoginReq req) {
+        req.setPassword(DigestUtils.md5DigestAsHex(req.getPassword().getBytes()));
+        LOG.info("登录、后端加密："+req.getPassword());
+        CommonResp<UserLoginResp> resp = new CommonResp<>();
+        UserLoginResp userLoginResp = userService.login(req);
+
+        /**
+         * redis需要我们手动生成一个不会重复的字符串，作为 token
+         * 用 UUID，雪花算法，都可以
+         */
+        Long token = snowFlake.nextId();
+        // {} 是 LOG 中的占位符
+        LOG.info("生成单点登录 token:{}",token);
+        userLoginResp.setToken(token.toString());
+
+        /**
+         * token: 手动生成的 token 作为 redis 的 key
+         *
+         * JSONObject.toJSON(userLoginResp): 作为 redis 的 value,
+         * 这个 value 需要序列化，可以让 userLoginResp 实现Serializable接口，
+         * 也可以像下面一样，将其转成 JSON 字符串
+         *
+         * 3600*24: 设置超时时间
+         */
+        redisTemplate.opsForValue().set(token.toString(), JSONObject.toJSON(userLoginResp),3600*24, TimeUnit.SECONDS);
+
+        resp.setContent(userLoginResp);
+        return resp;
+
     }
 
 
