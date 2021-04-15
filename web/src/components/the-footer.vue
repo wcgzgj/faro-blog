@@ -5,7 +5,7 @@
             <el-divider direction="vertical"></el-divider>
             <span>我的 qq</span>
             <el-divider direction="vertical"></el-divider>
-            <span>我的 微信</span>
+            <span>博客介绍</span>
         </div>
     </el-footer>
 </template>

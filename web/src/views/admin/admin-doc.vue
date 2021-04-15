@@ -218,7 +218,6 @@
                         loading.value = false;
                         docList.value = data.content.list;
                         total.value=data.content.total;
-                        alert(pageSize.value)
                     } else {
                         ElMessage.error("查询无果！");
                     }
