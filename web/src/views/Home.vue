@@ -94,69 +94,12 @@
           </el-card>
         </el-col>
 
-
-
+        <el-divider><i class="el-icon-mobile-phone"></i>扫码关注我</el-divider>
 
         <el-col>
-          <el-row :gutter="5" style="text-align: center">
-            <el-col :span="6">
-              <el-popover
-                      placement="left"
-                      :width="400"
-                      trigger="hover"
-              >
-                <template #reference>
-                  <el-avatar icon="el-icon-third-weixin"></el-avatar>
-                </template>
-                <el-card :body-style="{ padding: '0px' }">
-                  <img src="../assets/wechat.jpg" class="card-image">
-                </el-card>
-              </el-popover>
-            </el-col>
-            <el-col :span="6">
-              <el-popover
-                      placement="bottom"
-                      :width="400"
-                      trigger="hover"
-              >
-                <template #reference>
-                  <el-avatar icon="el-icon-third-qq"></el-avatar>
-                </template>
-                <el-card :body-style="{ padding: '0px' }">
-                  <img src="../assets/qq.jpg" class="card-image">
-                </el-card>
-              </el-popover>
-            </el-col>
-            <el-col :span="6">
-              <el-popover
-                      placement="bottom"
-                      :width="400"
-                      trigger="hover"
-              >
-                <template #reference>
-                  <el-avatar icon="el-icon-third-shejiaotubiao-09"></el-avatar>
-                </template>
-                <el-card :body-style="{ padding: '0px' }">
-                  <img src="../assets/zhifu.jpg" class="card-image">
-                </el-card>
-              </el-popover>
-            </el-col>
-            <el-col :span="6">
-              <el-popover
-                      placement="top"
-                      :width="400"
-                      trigger="hover"
-                      content="点击前往我的 Github 主页"
-              >
-                <template #reference>
-                  <el-avatar
-                          icon="el-icon-third-github"
-                          @click="toMyGithub"
-                  ></el-avatar>
-                </template>
-              </el-popover>
-            </el-col>
-          </el-row>
+          <el-card :body-style="{ padding: '0px' }" style="text-align: center; margin: 20px">
+            <img src="../assets/weixin-artical.jpg" class="card-image">
+          </el-card>
         </el-col>
 
 
@@ -219,7 +162,7 @@ export default defineComponent({
     pageNum.value = 1;
 
     const pageSize = ref();
-    pageSize.value = 3;
+    pageSize.value = 4;
 
 
     const handleCurrentChange = (currentPage) => {

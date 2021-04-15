@@ -24,7 +24,7 @@
 
 
 <style lang="scss">
-  .the-footer, .the-header {
+  .the-header, .the-footer {
     background-color: #B3C0D1;
     color: #333;
     text-align: center;
@@ -32,7 +32,9 @@
     margin: 0px;
   }
 
-  /*.el-aside {*/
+
+
+    /*.el-aside {*/
   /*  background-color: #D3DCE6;*/
   /*  color: #333;*/
   /*  text-align: center;*/

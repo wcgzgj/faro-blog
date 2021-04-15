@@ -1,11 +1,9 @@
 <template>
-    <el-footer style="background-color: #545c64" class="the-footer">
+    <el-footer style="background-color: #545c64" class="the-footer" >
         <div style="text-decoration-color: #E9EEF3">
-            <span>FARO_Z</span>
+            <span>FARO_Z的个人博客</span>
             <el-divider direction="vertical"></el-divider>
-            <span>我的 qq</span>
-            <el-divider direction="vertical"></el-divider>
-            <span>博客介绍</span>
+            自由的技术人
         </div>
     </el-footer>
 </template>

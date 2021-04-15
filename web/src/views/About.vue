@@ -74,6 +74,7 @@
               </el-col>
               <el-col :span="16">zhangjia_good@126.com</el-col>
             </el-row>
+
             <el-row :gutter="20" style="margin-top: 20px">
               <el-col :span="8">
                 <el-tag type="info">
@@ -82,6 +83,76 @@
               </el-col>
               <el-col :span="16">18012224600</el-col>
             </el-row>
+
+            <el-row :gutter="20" style="margin-top: 20px">
+              <el-col :span="8">
+                <el-tag type="info">
+                  更多:
+                </el-tag>
+              </el-col>
+              <el-col :span="16">
+                <el-row :gutter="1" style="text-align: center">
+                  <el-col :span="6">
+                    <el-popover
+                            placement="left"
+                            :width="400"
+                            trigger="hover"
+                    >
+                      <template #reference>
+                        <el-avatar icon="el-icon-third-weixin"></el-avatar>
+                      </template>
+                      <el-card :body-style="{ padding: '0px' }">
+                        <img src="../assets/wechat.jpg" class="card-image">
+                      </el-card>
+                    </el-popover>
+                  </el-col>
+                  <el-col :span="6">
+                    <el-popover
+                            placement="bottom"
+                            :width="400"
+                            trigger="hover"
+                    >
+                      <template #reference>
+                        <el-avatar icon="el-icon-third-qq"></el-avatar>
+                      </template>
+                      <el-card :body-style="{ padding: '0px' }">
+                        <img src="../assets/qq.jpg" class="card-image">
+                      </el-card>
+                    </el-popover>
+                  </el-col>
+                  <el-col :span="6">
+                    <el-popover
+                            placement="bottom"
+                            :width="400"
+                            trigger="hover"
+                    >
+                      <template #reference>
+                        <el-avatar icon="el-icon-third-shejiaotubiao-09"></el-avatar>
+                      </template>
+                      <el-card :body-style="{ padding: '0px' }">
+                        <img src="../assets/zhifu.jpg" class="card-image">
+                      </el-card>
+                    </el-popover>
+                  </el-col>
+                  <el-col :span="6">
+                    <el-popover
+                            placement="top"
+                            :width="400"
+                            trigger="hover"
+                            content="点击前往我的 Github 主页"
+                    >
+                      <template #reference>
+                        <el-avatar
+                                icon="el-icon-third-github"
+                                @click="toMyGithub"
+                        ></el-avatar>
+                      </template>
+                    </el-popover>
+                  </el-col>
+                </el-row>
+              </el-col>
+            </el-row>
+
           </el-card>
         </el-col>
 
@@ -139,6 +210,11 @@
     font-size: 30px;
     font-weight: bold;
     font-family: Snell Roundhand, cursive;
+  }
+
+  .card-image {
+    width: 100%;
+    display: block;
   }
 
 
