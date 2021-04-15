@@ -92,7 +92,6 @@ public class UserController {
     @PostMapping("/reset-password")
     public CommonResp resetPassword(@RequestBody @Valid UserResetPasswordReq req) {
         req.setPassword(DigestUtils.md5DigestAsHex(req.getPassword().getBytes()));
-        LOG.info("重置、后端加密："+req.getPassword());
         userService.resetPassword(req);
 
         CommonResp resp = new CommonResp<>();
@@ -117,7 +116,6 @@ public class UserController {
     @PostMapping("/login")
     public CommonResp login(@Valid @RequestBody UserLoginReq req) {
         req.setPassword(DigestUtils.md5DigestAsHex(req.getPassword().getBytes()));
-        LOG.info("登录、后端加密："+req.getPassword());
         CommonResp<UserLoginResp> resp = new CommonResp<>();
         UserLoginResp userLoginResp = userService.login(req);
 
@@ -137,7 +135,7 @@ public class UserController {
          * 这个 value 需要序列化，可以让 userLoginResp 实现Serializable接口，
          * 也可以像下面一样，将其转成 JSON 字符串
          *
-         * 3600*24: 设置超时时间
+         * 3600*24: 设置超时时间,一天后过期，需要重新登录
          */
         redisTemplate.opsForValue().set(token.toString(), JSONObject.toJSON(userLoginResp),3600*24, TimeUnit.SECONDS);
 

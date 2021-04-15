@@ -71,53 +71,12 @@
         setup() {
             const user = computed(() => store.state.user);
 
-            const loginUser = ref();
-            loginUser.value= {
-                loginName: "test",
-                password: "abc123"
-            };
-
-
-            const loginModalVisible = ref();
-            loginModalVisible.value=false;
-
-            const loginModalLoading = ref();
-            loginModalLoading.value=false;
-
 
 
             /**
              * ------方法区------
              */
-            const showLoginModal= ()=> {
-                loginModalVisible.value=true;
-            }
 
-
-            const login = () => {
-                console.log("开始登录!")
-                loginModalLoading.value=true;
-
-                loginUser.value.password = hexMd5(loginUser.value.password + KEY);
-
-                axios.post("/user/login",loginUser.value).then((response)=>{
-                    loginModalLoading.value=false;
-                    const data = response.data;
-                    if (data.success) {
-                        loginModalVisible.value=false;
-                        ElMessage.success("登录成功!")
-                        /**
-                         * setUser: vuex 中 mutations中的方法
-                         *
-                         * 后面的参数，都是我们在 mutations 中自定义方法的参数
-                         * state 参数因为是自带的，所以没有必要写
-                         */
-                        store.commit("setUser",data.content);
-                    } else {
-                        ElMessage.error(data.message);
-                    }
-                });
-            }
 
             /**
              * 退出登录
@@ -151,13 +110,7 @@
             });
 
             return {
-                user,
-                loginUser,
-                loginModalVisible,
-                loginModalLoading,
-
-
-                showLoginModal
+                user
 
             }
         }
