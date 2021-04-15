@@ -22,6 +22,7 @@
 
 </script>
 
+
 <style lang="scss">
   .the-footer, .the-header {
     background-color: #B3C0D1;
@@ -57,8 +58,4 @@
     /*统一设置高度为100%*/
     height: 100%;
   }
-
-
-
-
 </style>

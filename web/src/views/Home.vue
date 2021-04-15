@@ -81,30 +81,85 @@
       <el-row>
         <el-col>
           <el-card :body-style="{ padding: '0px' }" style="text-align: center; margin: 20px">
-            <img src="../assets/me.jpg" class="me-image">
-            <div style="padding: 14px;">
-              <div style="border-radius: 4px;box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1)">
-                我是练习时长一年左右的 java 练习生 FARO_Z，喜欢 web 开发，徒手造轮子，手撕源码
-              </div>
-            </div>
+            <img src="../assets/me.jpg" class="card-image">
           </el-card>
         </el-col>
+
+
         <el-col>
-          <el-card :body-style="{ padding: '0px' }" style="text-align: center;margin: 20px">
-            <img src="../assets/wechat.jpg" class="me-image">
-            <div style="padding: 14px;">
-              <span>我的微信</span>
+          <el-card :body-style="{ padding: '0px' }" style="text-align: center; margin: 20px">
+            <div style="border-radius: 4px;box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1); padding: 10px">
+              我是练习时长一年左右的 java 练习生 FARO_Z，喜欢 web 开发，徒手造轮子，手撕源码
             </div>
           </el-card>
         </el-col>
-        <!--<el-col>-->
-        <!--  <el-card :body-style="{ padding: '0px' }" style="text-align: center;margin: 20px">-->
-        <!--    <img src="../assets/qq.jpg" class="me-image">-->
-        <!--    <div style="padding: 14px;">-->
-        <!--      <span>我的QQ</span>-->
-        <!--    </div>-->
-        <!--  </el-card>-->
-        <!--</el-col>-->
+
+
+
+
+        <el-col>
+          <el-row :gutter="5" style="text-align: center">
+            <el-col :span="6">
+              <el-popover
+                      placement="left"
+                      :width="400"
+                      trigger="hover"
+              >
+                <template #reference>
+                  <el-avatar icon="el-icon-third-weixin"></el-avatar>
+                </template>
+                <el-card :body-style="{ padding: '0px' }">
+                  <img src="../assets/wechat.jpg" class="card-image">
+                </el-card>
+              </el-popover>
+            </el-col>
+            <el-col :span="6">
+              <el-popover
+                      placement="bottom"
+                      :width="400"
+                      trigger="hover"
+              >
+                <template #reference>
+                  <el-avatar icon="el-icon-third-qq"></el-avatar>
+                </template>
+                <el-card :body-style="{ padding: '0px' }">
+                  <img src="../assets/qq.jpg" class="card-image">
+                </el-card>
+              </el-popover>
+            </el-col>
+            <el-col :span="6">
+              <el-popover
+                      placement="bottom"
+                      :width="400"
+                      trigger="hover"
+              >
+                <template #reference>
+                  <el-avatar icon="el-icon-third-shejiaotubiao-09"></el-avatar>
+                </template>
+                <el-card :body-style="{ padding: '0px' }">
+                  <img src="../assets/zhifu.jpg" class="card-image">
+                </el-card>
+              </el-popover>
+            </el-col>
+            <el-col :span="6">
+              <el-popover
+                      placement="top"
+                      :width="400"
+                      trigger="hover"
+                      content="点击前往我的 Github 主页"
+              >
+                <template #reference>
+                  <el-avatar
+                          icon="el-icon-third-github"
+                          @click="toMyGithub"
+                  ></el-avatar>
+                </template>
+              </el-popover>
+            </el-col>
+          </el-row>
+        </el-col>
+
+
       </el-row>
 
     </el-sider>
@@ -120,7 +175,6 @@
 import { defineComponent,onMounted,ref } from 'vue';
 import axios from "axios";
 import { ElMessage } from 'element-plus'
-import dayjs from "dayjs"
 
 export default defineComponent({
   name: 'Home',
@@ -194,6 +248,11 @@ export default defineComponent({
     }
 
 
+    const toMyGithub = () => {
+      window.open("https://github.com/wcgzgj","_blank")
+    }
+
+
 
 
     onMounted(()=> {
@@ -209,7 +268,8 @@ export default defineComponent({
       pageNum,
       pageSize,
 
-      handleCurrentChange
+      handleCurrentChange,
+      toMyGithub
     }
   }
 });
@@ -252,6 +312,11 @@ export default defineComponent({
     margin: 4px;
     border-radius: 4%;
     width: 200px;
+  }
+
+  .card-image {
+    width: 100%;
+    display: block;
   }
 
 

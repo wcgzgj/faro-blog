@@ -1,87 +1,92 @@
 <template>
 
+    <el-container>
+        <el-main>
+            <el-row>
+                <el-col :span="18" :offset="3" style="margin-top: 30px">
 
-    <el-row>
-        <el-col :span="18" :offset="3" style="margin-top: 30px">
+                    <el-form :inline="true" :model="formInline" class="demo-form-inline">
 
-            <el-form :inline="true" :model="formInline" class="demo-form-inline">
+                        <el-form-item>
+                            <el-input v-model="searchElem" placeholder="请输入登录名"></el-input>
+                        </el-form-item>
 
-                <el-form-item>
-                    <el-input v-model="searchElem" placeholder="请输入登录名"></el-input>
-                </el-form-item>
+                        <el-form-item>
+                            <el-button
+                                    type="primary"
+                                    @click.native="handelSearch"
+                                    icon="el-icon-search">
+                                搜索
+                            </el-button>
+                        </el-form-item>
 
-                <el-form-item>
-                    <el-button
-                            type="primary"
-                            @click.native="handelSearch"
-                            icon="el-icon-search">
-                        搜索
-                    </el-button>
-                </el-form-item>
+                        <el-form-item>
+                            <el-button
+                                    type="primary"
+                                    @click.native="handelAdd"
+                                    icon="el-icon-plus">
+                                新增
+                            </el-button>
+                        </el-form-item>
+                    </el-form>
 
-                <el-form-item>
-                    <el-button
-                            type="primary"
-                            @click.native="handelAdd"
-                            icon="el-icon-plus">
-                        新增
-                    </el-button>
-                </el-form-item>
-            </el-form>
-
-        </el-col>
+                </el-col>
 
 
-        <el-col :span="18" :offset="3" style="margin-top: 30px ; margin-bottom: 30px">
-            <el-table
-                    v-loading="loading"
-                    :data="userList"
-                    border
-                    style="width: 100%; text-align: center">
-                <el-table-column
-                        label="登录名"
+                <el-col :span="18" :offset="3" style="margin-top: 30px ; margin-bottom: 30px">
+                    <el-table
+                            v-loading="loading"
+                            :data="userList"
+                            border
+                            style="width: 100%; text-align: center">
+                        <el-table-column
+                                label="登录名"
                         >
-                    <template #default="scope">
-                        <span style="margin-left: 10px">{{ scope.row.loginName }}</span>
-                    </template>
-                </el-table-column>
-                <el-table-column
-                        label="昵称"
+                            <template #default="scope">
+                                <span style="margin-left: 10px">{{ scope.row.loginName }}</span>
+                            </template>
+                        </el-table-column>
+                        <el-table-column
+                                label="昵称"
                         >
-                    <template #default="scope">
-                        <span style="margin-left: 10px">{{ scope.row.name }}</span>
-                    </template>
-                </el-table-column>
+                            <template #default="scope">
+                                <span style="margin-left: 10px">{{ scope.row.name }}</span>
+                            </template>
+                        </el-table-column>
 
-                <el-table-column
-                        label="密码"
-                >
-                    <template #default="scope">
-                        <span style="margin-left: 10px">{{ scope.row.password }}</span>
-                    </template>
-                </el-table-column>
-
-                <el-table-column
-                        label="操作"
-                        width="260px"
+                        <el-table-column
+                                label="密码"
                         >
-                    <template #default="scope">
+                            <template #default="scope">
+                                <span style="margin-left: 10px">{{ scope.row.password }}</span>
+                            </template>
+                        </el-table-column>
 
-                        <el-button
-                                size="mini"
-                                @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
-                        <el-button
-                                size="mini"
-                                @click="handleReset(scope.$index, scope.row)">重置密码</el-button>
-                        <el-button
-                                size="mini"
-                                type="danger"
-                                @click="handleDelete(scope.$index, scope.row)">删除</el-button>
-                    </template>
-                </el-table-column>
-            </el-table>
-        </el-col>
-    </el-row>
+                        <el-table-column
+                                label="操作"
+                                width="260px"
+                        >
+                            <template #default="scope">
+
+                                <el-button
+                                        size="mini"
+                                        @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
+                                <el-button
+                                        size="mini"
+                                        @click="handleReset(scope.$index, scope.row)">重置密码</el-button>
+                                <el-button
+                                        size="mini"
+                                        type="danger"
+                                        @click="handleDelete(scope.$index, scope.row)">删除</el-button>
+                            </template>
+                        </el-table-column>
+                    </el-table>
+                </el-col>
+            </el-row>
+        </el-main>
+    </el-container>
+
+
 
 
     <el-dialog title="用户编辑" v-model="editDialogFormVisible">
@@ -126,7 +131,6 @@
             </span>
         </template>
     </el-dialog>
-
 
 
     <el-dialog title="重置密码" v-model="resetDialogFormVisible">

@@ -1,94 +1,100 @@
 <template>
 
+    <el-container>
+        <el-main>
+            <el-row>
+                <el-col :span="18" :offset="3" style="margin-top: 30px">
 
-    <el-row>
-        <el-col :span="18" :offset="3" style="margin-top: 30px">
 
 
+                    &nbsp;&nbsp;
 
-            &nbsp;&nbsp;
+                    <el-form :inline="true" :model="formInline" class="demo-form-inline">
 
-            <el-form :inline="true" :model="formInline" class="demo-form-inline">
+                        <el-form-item>
+                            <el-input v-model="searchElem" placeholder="请输入内容"></el-input>
+                        </el-form-item>
 
-                <el-form-item>
-                    <el-input v-model="searchElem" placeholder="请输入内容"></el-input>
-                </el-form-item>
-
-                <el-form-item>
-                    <el-button
-                            type="primary"
-                            @click.native="handelSearch"
-                            icon="el-icon-search">
-                        搜索
-                    </el-button>
-                </el-form-item>
-
-                <el-form-item>
-                    <router-link :to="'/admin/docEdit'">
-                        <el-button type="primary" icon="el-icon-plus">
-                            新增
-                        </el-button>
-                    </router-link>
-                </el-form-item>
-
-            </el-form>
-        </el-col>
-        <el-col :span="18" :offset="3" style="margin-top: 30px ; margin-bottom: 30px">
-            <el-table
-                    v-loading="loading"
-                    :data="docList"
-                    border
-                    style="width: 100%; text-align: center">
-                <el-table-column
-                        label="名称"
-                        >
-                    <template #default="scope">
-                        <span style="margin-left: 10px">{{ scope.row.name }}</span>
-                    </template>
-                </el-table-column>
-                <el-table-column
-                        label="介绍"
-                        >
-                    <template #default="scope">
-                        <span style="margin-left: 10px">{{ scope.row.description }}</span>
-                    </template>
-                </el-table-column>
-
-                <el-table-column
-                        label="操作"
-                        >
-                    <template #default="scope">
-
-                        <router-link :to="'/admin/docEdit?docId='+scope.row.id">
+                        <el-form-item>
                             <el-button
-                                    size="mini"
-                                    @click="">编辑</el-button>
-                        </router-link>
-                        &nbsp;&nbsp;
-                        <el-button
-                                size="mini"
-                                type="danger"
-                                @click="handleDelete(scope.$index, scope.row)">删除</el-button>
-                    </template>
-                </el-table-column>
-            </el-table>
-        </el-col>
-    </el-row>
+                                    type="primary"
+                                    @click.native="handelSearch"
+                                    icon="el-icon-search">
+                                搜索
+                            </el-button>
+                        </el-form-item>
 
-    <!--分页-->
-    <el-row :gutter="20" style="margin-bottom: 35px">
-        <el-col :span="20" :offset="2">
+                        <el-form-item>
+                            <router-link :to="'/admin/docEdit'">
+                                <el-button type="primary" icon="el-icon-plus">
+                                    新增
+                                </el-button>
+                            </router-link>
+                        </el-form-item>
+
+                    </el-form>
+                </el-col>
+                <el-col :span="18" :offset="3" style="margin-top: 30px ; margin-bottom: 30px">
+                    <el-table
+                            v-loading="loading"
+                            :data="docList"
+                            border
+                            style="width: 100%; text-align: center">
+                        <el-table-column
+                                label="名称"
+                        >
+                            <template #default="scope">
+                                <span style="margin-left: 10px">{{ scope.row.name }}</span>
+                            </template>
+                        </el-table-column>
+                        <el-table-column
+                                label="介绍"
+                        >
+                            <template #default="scope">
+                                <span style="margin-left: 10px">{{ scope.row.description }}</span>
+                            </template>
+                        </el-table-column>
+
+                        <el-table-column
+                                label="操作"
+                        >
+                            <template #default="scope">
+
+                                <router-link :to="'/admin/docEdit?docId='+scope.row.id">
+                                    <el-button
+                                            size="mini"
+                                            @click="">编辑</el-button>
+                                </router-link>
+                                &nbsp;&nbsp;
+                                <el-button
+                                        size="mini"
+                                        type="danger"
+                                        @click="handleDelete(scope.$index, scope.row)">删除</el-button>
+                            </template>
+                        </el-table-column>
+                    </el-table>
+                </el-col>
+            </el-row>
+
             <!--分页-->
-            <el-pagination
-                    @current-change="handleCurrentChange"
-                    :current-page="pageNum"
-                    :page-size="pageSize"
-                    background
-                    layout="prev, pager, next"
-                    :total="total">
-            </el-pagination>
-        </el-col>
-    </el-row>
+            <el-row :gutter="20" style="margin-bottom: 35px">
+                <el-col :span="20" :offset="2">
+                    <!--分页-->
+                    <el-pagination
+                            @current-change="handleCurrentChange"
+                            :current-page="pageNum"
+                            :page-size="pageSize"
+                            background
+                            layout="prev, pager, next"
+                            :total="total">
+                    </el-pagination>
+                </el-col>
+            </el-row>
+        </el-main>
+
+    </el-container>
+
+
 
 
 </template>
