@@ -40,13 +40,26 @@
         </el-menu-item>
 
 
+
+
         <!--登录及用户名显示-->
         <div style="margin-right: 40px">
             <router-link to="#" class="login-menu" v-show="user.id">
                 <span>你好: {{user.name}}</span>
+                <el-divider direction="vertical"></el-divider>
+                <el-popconfirm
+                        title="确认退出？"
+                        @confirm="logout"
+                >
+                    <template #reference>
+                        <a class="login-menu" v-show="user.id" >
+                            <span>退出登录</span>
+                        </a>
+                    </template>
+                </el-popconfirm>
             </router-link>
 
-            <router-link to="/login" class="login-menu" @click="showLoginModal" v-show="!user.id">
+            <router-link to="/login" class="login-menu" v-show="!user.id">
                 <span>登录</span>
             </router-link>
         </div>
@@ -69,6 +82,9 @@
 
 
         setup() {
+            /**
+             * ------变量区------
+             */
             const user = computed(() => store.state.user);
 
 
@@ -87,9 +103,7 @@
                 axios.get("/user/logout/"+user.value.token).then((response)=>{
                     const data = response.data;
                     if (data.success) {
-                        loginModalVisible.value=false;
                         ElMessage.success("退出登录成功!")
-
                         /**
                          * 退出登录时
                          * 将 sessionStorage 中对应 user的信息清空
@@ -97,20 +111,21 @@
                          */
                         store.commit("setUser", {});
                     } else {
-                        /**
-                         * 使用 antd 的组件，弹出错误信息
-                         */
                         ElMessage.error(data.message);
                     }
                 });
             }
+
+
 
             onMounted(()=> {
 
             });
 
             return {
-                user
+                user,
+
+                logout
 
             }
         }
