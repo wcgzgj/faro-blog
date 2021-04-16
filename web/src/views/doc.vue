@@ -1,38 +1,22 @@
 <template>
 
-    <el-container>
+    <el-container >
 
-        <el-sider style="width: 30%">
-            <el-card class="box-card">
-                <template #header>
-                    <div class="card-header">
-                        <span>卡片名称</span>
-                        <el-button class="button" type="text">操作按钮</el-button>
-                    </div>
-                </template>
-                <div v-for="o in 4" :key="o" class="text item">
-                    {{'列表内容 ' + o }}
+        <el-main >
+
+
+            <div class="toTop">
+
+                <!--文章页面-->
+                <div class="artical-div">
+                    <v-md-editor v-model="docContent"  mode="preview" ref="editor"/>
                 </div>
-            </el-card>
-        </el-sider>
+            </div>
 
-        <el-main style="width: 70%">
-            <!--文章页面-->
-            <el-row >
-                <el-col :span="18" :offset="3" >
-                    <div>
-                        <vue3-markdown-it :source='docContent' />
-                    </div>
-                </el-col>
-            </el-row>
-
-            <el-row style="text-align: center">
-                <el-col :span="14" :offset="5" >
-                    <!--<comment :comments="commentData"></comment>-->
-                </el-col>
-            </el-row>
+            <el-backtop target=".toTop"  :visibility-height="10" :bottom="100"></el-backtop>
 
         </el-main>
+
 
     </el-container>
 
@@ -40,7 +24,6 @@
 </template>
 
 <script>
-    import E from 'wangeditor';
     import { onMounted,ref } from 'vue';
     import axios from "axios";
     import {ElMessage} from "element-plus";
@@ -48,8 +31,6 @@
     import {Tool} from "@/util/tool";
     import router from "../router/index.ts";
 
-    import 'highlight.js/styles/monokai.css';
-    import VueMarkdownIt from 'vue3-markdown-it';
 
 
     export default {
@@ -125,6 +106,8 @@
             }
 
 
+
+
             onMounted(() => {
                 handelOpen();
             });
@@ -138,9 +121,7 @@
                 doc,
                 docContent,
 
-
-                handelOpen,
-                VueMarkdownIt
+                handelOpen
             }
 
         }
@@ -152,6 +133,22 @@
     .box-card {
         height: 100%;
     }
+
+    .artical-div {
+        margin: auto;
+        border-width: 10px;
+        border-color: #333333;
+        padding: 10px;
+        background-color: #B3C0D1;
+        border-radius: 4px;
+        width: 60%;
+    }
+
+    .toTop {
+        height: 100vh;
+        overflow: scroll;
+    }
+
 
 
 </style>

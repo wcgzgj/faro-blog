@@ -9,6 +9,7 @@
     "build-prod": "vue-cli-service build --mode prod"
   },
   "dependencies": {
+    "@kangc/v-md-editor": "^2.2.2",
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
     "dayjs": "^1.10.4",

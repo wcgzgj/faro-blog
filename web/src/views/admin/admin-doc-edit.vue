@@ -37,8 +37,11 @@
         </el-row>
 
         <el-row class="artical-row">
-            <el-col :span="20" :offset="2">
-                <div id="content"></div>
+            <el-col :span="20" :offset="2" >
+                <!--<div id="content"></div>-->
+                <div style="height: 400px">
+                    <v-md-editor v-model="text" style="height: 100%"></v-md-editor>
+                </div>
             </el-col>
         </el-row>
 
@@ -67,8 +70,6 @@
 
 <script>
     // 管理员文档编辑界面
-
-    import E from 'wangeditor';
     import { onMounted,ref } from 'vue';
     import axios from "axios";
     import {ElMessage} from "element-plus";
@@ -85,7 +86,6 @@
             /**
              * ------变量区------
              */
-            const editor = new E('#content');
 
             //文档信息
             const doc = ref();
@@ -106,9 +106,9 @@
             const drawer = ref();
             drawer.value =false;
 
-
-
-
+            //markdown内容
+            const text = ref();
+            text.value='';
 
             /**
              * ------函数区------
@@ -148,7 +148,7 @@
                 axios.get("/doc/find-content/"+id).then( (resp) => {
                     const data = resp.data;
                     if (data.success) {
-                        editor.txt.text(data.content);
+                        text.value=data.content
                     } else {
                         ElMessage("文章内容加载错误！")
                     }
@@ -161,7 +161,7 @@
              */
             const previewDoc = ref();
             const handelPreview = () => {
-                previewDoc.value = editor.txt.text();
+                previewDoc.value = text.value
             }
 
 
@@ -170,7 +170,7 @@
              */
             const handelSave = () => {
                 //将文章信息存入 doc 中
-                doc.value.content=editor.txt.text()
+                doc.value.content=text.value
 
                 console.log(doc.value);
                 axios.post("/doc/save", doc.value).then( (resp)=> {
@@ -205,7 +205,6 @@
 
 
             onMounted(() => {
-                editor.create();
                 handelOpen();
             });
 
@@ -218,6 +217,7 @@
                 doc,
                 drawer,
                 previewDoc,
+                text,
 
                 handelPreview,
                 handelSave,

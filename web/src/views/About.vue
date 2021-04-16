@@ -51,7 +51,7 @@
           </el-card>
         </el-col>
 
-        <el-col style="margin-top: 20px">
+        <el-col style="margin-top: 20px; margin-bottom: 20px">
           <el-card class="box-card">
             <template #header>
               <div class="card-header">
@@ -191,14 +191,14 @@
   }
 
   .box-card {
-    margin-top: 20px;
     margin-right: 30px;
     margin-left: 30px;
   }
 
-  /*.box-card:hover {*/
-  /*  margin-top: -5px;*/
-  /*}*/
+  .box-card:hover {
+    margin-top: -5px;
+    margin-bottom: -5px;
+  }
   /*.el-card {*/
   /*  min-width: 380px;*/
   /*  margin-right: 20px;*/
