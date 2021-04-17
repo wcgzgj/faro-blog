@@ -1,5 +1,7 @@
 package blog.interceptor;
 
+import blog.exception.BusinessException;
+import blog.exception.BusinessExceptionCode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -42,11 +44,13 @@ public class LoginInterceptor implements HandlerInterceptor {
         //获取header的token参数
         String token = request.getHeader("token");
         LOG.info("登录校验开始，token：{}", token);
+        //未登录
         if (token == null || token.isEmpty()) {
             LOG.info( "token为空，请求被拦截" );
             response.setStatus(HttpStatus.UNAUTHORIZED.value());
             return false;
         }
+        //登录信息无效
         Object object = redisTemplate.opsForValue().get(token);
         if (object == null) {
             LOG.warn( "token无效，请求被拦截" );

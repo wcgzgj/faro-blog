@@ -35,18 +35,19 @@ public class SpringMvcConfig implements WebMvcConfigurer {
         /**
          * 对部分访问进行拦截
          */
-        // registry.addInterceptor(loginInterceptor)
-        //         .addPathPatterns("/**") //先对所有部分进行拦截
-        //         .excludePathPatterns( //再排除不像拦截的部分
-        //                 "/",
-        //                 "/doc/list",
-        //                 "/doc/all/**",
-        //                 "/redis/**",
-        //                 "/login",
-        //                 "/user/login",
-        //                 "/user/logout/**",
-        //                 "/doc/find-content/**"
-        //         );
+        registry.addInterceptor(loginInterceptor)
+                .addPathPatterns("/**") //先对所有部分进行拦截
+                .excludePathPatterns( //再排除不像拦截的部分
+                        "/",
+                        "/doc/list",
+                        "/doc/all/**",
+                        "/doc/find/**",
+                        "/doc/find-content/**",
+                        "/redis/**",
+                        "/login",
+                        "/user/login",
+                        "/user/logout/**"
+                );
 
         // registry.addInterceptor(actionInterceptor)
         //         .addPathPatterns(

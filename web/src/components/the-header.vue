@@ -18,7 +18,7 @@
                 首页
             </el-link>
         </el-menu-item>
-        <el-menu-item index="/admin/doc">
+        <el-menu-item index="/admin/doc" :style="user.id? {}:{display:'none'}">
             <el-link :underline="false" icon="el-icon-s-management">
                 文章管理
             </el-link>

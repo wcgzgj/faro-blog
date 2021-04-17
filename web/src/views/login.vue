@@ -61,8 +61,6 @@
 
             const loginUser = ref();
             loginUser.value = {
-                loginName: 'admin',
-                password: 'abc123'
             }
             
 
