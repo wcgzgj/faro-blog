@@ -1,9 +1,14 @@
 <template>
-    <el-container>
+    <el-container class="chart">
         <el-main>
-            <html :ref="setRef"></html>
+            <el-progress type="dashboard" :percentage="80">
+                <template #default="{ percentage }">
+                    <span class="percentage-label">博客开发进度</span>
+                    <br/>
+                    <span class="percentage-value">{{ percentage }}%</span>
+                </template>
+            </el-progress>
         </el-main>
-
     </el-container>
 </template>
 
@@ -15,21 +20,13 @@
         name: "report",
 
         setup() {
-            const setRef = (el) => {
-                myRef.value.push(el)
-            }
-
-            // 存储dom数组
-            const myRef = ref([]);
 
 
             onMounted( () => {
-                console.dir(myRef.value)
             })
 
             return {
-                text: "# hello md",
-                setRef
+
             }
         }
 
@@ -37,5 +34,9 @@
 </script>
 
 <style scoped>
+    .chart {
+        align-items: center;
+        text-align: center;
+    }
 
 </style>
